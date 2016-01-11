@@ -161,6 +161,7 @@ spermRNA 中，引起隔代遗传，在代谢相关最重要的 RNA 亚群，
 - **进一步发现这些合成后的tsRNA相比精子来源的降解更快** [Figure 3A](#Figure3)。
 
 <a name="Figure3"></a>![Figure 3](/images/2016-01-11-SpermTsRNAs/fig3.png)
+
 [Figure 3](#Figure3)。
 
 ```
