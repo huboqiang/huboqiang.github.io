@@ -1,5 +1,5 @@
 ---
-title: [20160111组会]Sperm tsRNAs contribute to intergenerational inheritance of an acquired metabolic disorder
+title: "[20160111组会]Sperm tsRNAs contribute to intergenerational inheritance of an acquired metabolic disorder"
 tagline: ""
 last_updated: 2016-01-11
 category: Journal Club
@@ -14,10 +14,10 @@ huboqiang@gmail.com
 ## 作者
 周琪：
 
- <a name="Author"></a>![Figure 1S](image/2016-01-11-SpermTsRNAs/author.png)
+ <a name="Author"></a>![Figure 1S](/images/2016-01-11-SpermTsRNAs/author.png)
 [Zhou Qi](#Author). 
 
- <a name="Author2"></a>![Figure 1S](image/2016-01-11-SpermTsRNAs/author2.png)
+ <a name="Author2"></a>![Figure 1S](/images/2016-01-11-SpermTsRNAs/author2.png)
 [Chen Qi](#Author2). 
 
 ## Overview
@@ -41,7 +41,7 @@ F0 公鼠，一组 High-fat diet(HFD, 包含60%fat), 一组 ND Normal fat-diet(N
 上。 
 
 
- <a name="FigureS1"></a>![Figure 1S](image/2016-01-11-SpermTsRNAs/figS1.png)
+ <a name="FigureS1"></a>![Figure 1S](/images/2016-01-11-SpermTsRNAs/figS1.png)
 [Figure S1](#FigureS1). 
 
 ## 分别用 HFD（高脂肪饮食）、ND（正常饮食）的F0代精子繁育 F1 代
@@ -51,7 +51,7 @@ F0 公鼠，一组 High-fat diet(HFD, 包含60%fat), 一组 ND Normal fat-diet(N
 - F1 代 Week 7 时，GTT [Figure S2B](#FigureS2) 与 ITT [Figure S2C](#FigureS2) 结果显示，HFD 组后代的 血糖代谢出现了不良影响。
 - F1 代Week 15 时，这些不良影响严重加剧 [Figure S2D, E, F](#FigureS2)。
 
-<a name="FigureS2"></a>![Figure 2S](image/2016-01-11-SpermTsRNAs/figS2.png)
+<a name="FigureS2"></a>![Figure 2S](/images/2016-01-11-SpermTsRNAs/figS2.png)
 [Figure S2](#FigureS2). 
 
 ```
@@ -69,11 +69,11 @@ F0 公鼠，一组 High-fat diet(HFD, 包含60%fat), 一组 ND Normal fat-diet(N
 - 而 ITT 测试结果则显示，胰岛素敏感性在 HFD 与 ND 组差别不大 [Figure 1D](#Figure1)。**与精卵结合结果不同** [Figure S2D, E, F](#FigureS2)
 - 7 周时， 这一现象就已经出现 [Figure 3S](#FigureS3)。
 
-<a name="Figure1"></a>![Figure 1](image/2016-01-11-SpermTsRNAs/fig1.ABCD.png)
+<a name="Figure1"></a>![Figure 1](/images/2016-01-11-SpermTsRNAs/fig1.ABCD.png)
 
 [Figure 1, ABCD](#Figure1). 
 
-<a name="Figure3S"></a>![Figure 3S](image/2016-01-11-SpermTsRNAs/figS3.png)
+<a name="Figure3S"></a>![Figure 3S](/images/2016-01-11-SpermTsRNAs/figS3.png)
 [Figure S3](#FigureS3). 
 
 ```
@@ -86,12 +86,12 @@ F0 公鼠，一组 High-fat diet(HFD, 包含60%fat), 一组 ND Normal fat-diet(N
 ### smallRNA-seq 测序质量
 通过 smallRNA-seq, 检查精子 sncRNA(18-40bp) 的图谱[Figure S4](#FigureS4)。
 
-<a name="FigureS4"></a>![Figure S4](image/2016-01-11-SpermTsRNAs/figS4.png)
+<a name="FigureS4"></a>![Figure S4](/images/2016-01-11-SpermTsRNAs/figS4.png)
 [Figure S4](#FigureS4). 
 
 ### smallRNA-seq 结果包括 miRNAs 与 tsRNAs
 成熟的老鼠精子，除了 miRNA 以外，还具有**源于 tRNA 5` 端的 smallRNA(tsRNAs)**, [Figure 1E](#Figure1EF)。
-<a name="Figure1EF"></a>![Figure 1](image/2016-01-11-SpermTsRNAs/fig1.EF.png)
+<a name="Figure1EF"></a>![Figure 1](/images/2016-01-11-SpermTsRNAs/fig1.EF.png)
 [Figure 1E, F](#Figure1EF). 
 
 
@@ -102,7 +102,7 @@ F0 公鼠，一组 High-fat diet(HFD, 包含60%fat), 一组 ND Normal fat-diet(N
 即 HFD 的环境更容易影响 tsRNA
 ```
 
-<a name="FigureS5"></a>![Figure S5](image/2016-01-11-SpermTsRNAs/figS5.png)
+<a name="FigureS5"></a>![Figure S5](/images/2016-01-11-SpermTsRNAs/figS5.png)
 [Figure S5](#FigureS5)。
 
 
@@ -110,12 +110,12 @@ F0 公鼠，一组 High-fat diet(HFD, 包含60%fat), 一组 ND Normal fat-diet(N
 
 这里使用 15% PAGE 胶电泳，分离了 HFD、ND 的 ```15-25nt```, ```30-40nt```, 以及```40nt``` 以上的片段 [Figure 2A](#Figure2)。
 
-<a name="Figure2"></a>![Figure 2](image/2016-01-11-SpermTsRNAs/fig2.png)
+<a name="Figure2"></a>![Figure 2](/images/2016-01-11-SpermTsRNAs/fig2.png)
 [Figure 2](#Figure2)。
 
 ### HFD ND 两组tsRNAs分离纯度均为 88%
 长度在 ```30-40nt```之间的绝大多数是 tsRNA.
-<a name="FigureS7"></a>![Figure S7](image/2016-01-11-SpermTsRNAs/figS7.png)
+<a name="FigureS7"></a>![Figure S7](/images/2016-01-11-SpermTsRNAs/figS7.png)
 [Figure S7](#FigureS7)。
 
 ### 分别将分离的三组注射进受精卵中
@@ -126,9 +126,9 @@ F0 公鼠，一组 High-fat diet(HFD, 包含60%fat), 一组 ND Normal fat-diet(N
 
 于是稀释了 20x， 发现注射 15-25nt 后不再引起死亡，同时对 HFD也没有影响[Figure S8AB](#FigureS8AB)。>40nt 同样[Figure S8CD](#FigureS8CD)。
 
-<a name="FigureS8AB"></a>![Figure S8AB](image/2016-01-11-SpermTsRNAs/figS8.AB.png)
+<a name="FigureS8AB"></a>![Figure S8AB](/images/2016-01-11-SpermTsRNAs/figS8.AB.png)
 [Figure S8AB](#FigureS8AB)。
-<a name="FigureS8CD"></a>![Figure S8CD](image/2016-01-11-SpermTsRNAs/figS8.CD.png)
+<a name="FigureS8CD"></a>![Figure S8CD](/images/2016-01-11-SpermTsRNAs/figS8.CD.png)
 [Figure S8CD](#FigureS8CD)。
 
 然而，注射 ```30-40nt``` 则造成了与注射总 RNA 相同的症状： 
@@ -137,10 +137,10 @@ F0 公鼠，一组 High-fat diet(HFD, 包含60%fat), 一组 ND Normal fat-diet(N
 - 雄性个体中观察到了 GTT 中葡萄糖耐受低于 ND, 15Week [Figure 2C, D](#Figure2), 7-9 Week [Figure S9BD](#FigureS9)。
 - ITT中的胰岛素拮抗未发现 [Figure 2E](#Figure2)[Figure S9C, E](#FigureS9)。
 
-<a name="FigureS9"></a>![Figure S9](image/2016-01-11-SpermTsRNAs/figS9.png)
+<a name="FigureS9"></a>![Figure S9](/images/2016-01-11-SpermTsRNAs/figS9.png)
 [Figure S9](#FigureS9)。
 
-<a name="FigureS10"></a>![Figure S10](image/2016-01-11-SpermTsRNAs/figS10.png)
+<a name="FigureS10"></a>![Figure S10](/images/2016-01-11-SpermTsRNAs/figS10.png)
 [Figure S10](#FigureS10)。
 
 以上结果说明:
@@ -160,7 +160,7 @@ spermRNA 中，引起隔代遗传，在代谢相关最重要的 RNA 亚群，
 - 没有观察到代谢方面的紊乱 [Figure 2C, D, E](#Figure2)
 - **进一步发现这些合成后的tsRNA相比精子来源的降解更快** [Figure 3A](#Figure3)。
 
-<a name="Figure3"></a>![Figure 3](image/2016-01-11-SpermTsRNAs/fig3.png)
+<a name="Figure3"></a>![Figure 3](/images/2016-01-11-SpermTsRNAs/fig3.png)
 [Figure 3](#Figure3)。
 
 ```
@@ -176,7 +176,7 @@ spermRNA 中，引起隔代遗传，在代谢相关最重要的 RNA 亚群，
 - 而 15-25nt 的 sncRNAs 在精子却没有显著上升。[Figure 3C](#Figure3)
 - m5C 已经被报道与 RNA 介导的传代有关。
 
-<a name="FigureS11"></a>![Figure S11](image/2016-01-11-SpermTsRNAs/figS11.png)
+<a name="FigureS11"></a>![Figure S11](/images/2016-01-11-SpermTsRNAs/figS11.png)
 [Figure S11](#FigureS11)。
 
 ## tsRNA 对转录组、表观组造成的影响：
@@ -189,7 +189,7 @@ spermRNA 中，引起隔代遗传，在代谢相关最重要的 RNA 亚群，
 - 在 ND 与 HFD之间， 有 28 个基因找出了差异甲基化区域。
 - 然而，这些差异甲基化区域与差异表达基因之间没有交集。
 
-<a name="Figure4A"></a>![Figure 4A](image/2016-01-11-SpermTsRNAs/fig4.A.png.pdf)
+<a name="Figure4A"></a>![Figure 4A](/images/2016-01-11-SpermTsRNAs/fig4.A.png.pdf)
 [Figure 4A](#Figure4A)
 
 ```
@@ -205,10 +205,10 @@ spermRNA 中，引起隔代遗传，在代谢相关最重要的 RNA 亚群，
 - (280-8cell, 285-Blastocysts, 9-both) 个基因表达，HFD 相比 ND 发生了上调[Figure 4B, C](#Figure4BC)。
 - 下调的主要富集在了代谢通路上，上调基因不富集代谢通路[Table S11](#TabS11)。
 
-<a name="Figure4BC"></a>![Figure 4B, C](image/2016-01-11-SpermTsRNAs/fig4.BC.png)
+<a name="Figure4BC"></a>![Figure 4B, C](/images/2016-01-11-SpermTsRNAs/fig4.BC.png)
 [Figure 4B, C](#Figure4BC)
 
-<a name="TabS11"></a>![Table S11](image/2016-01-11-SpermTsRNAs/tabS11.pdf)
+<a name="TabS11"></a>![Table S11](/images/2016-01-11-SpermTsRNAs/tabS11.pdf)
 [Table S11](#TabS11)
 
 ### tsRNAs 结合位点
@@ -220,10 +220,10 @@ spermRNA 中，引起隔代遗传，在代谢相关最重要的 RNA 亚群，
 - 这些下调基因主要在 细胞凋亡、自噬、葡萄糖运输等通路[Figure S12](#FigureS12)。
 
 
-<a name="Figure4DE"></a>![Figure 4D, E](image/2016-01-11-SpermTsRNAs/fig4.D.png)
+<a name="Figure4DE"></a>![Figure 4D, E](/images/2016-01-11-SpermTsRNAs/fig4.D.png)
 [Figure 4D, E](#Figure4DE)
 
-<a name="FigureS12"></a>![Figure S12](image/2016-01-11-SpermTsRNAs/figS12.png)
+<a name="FigureS12"></a>![Figure S12](/images/2016-01-11-SpermTsRNAs/figS12.png)
 [Figure S12](#FigureS12)
 
 
