@@ -83,7 +83,9 @@ F0 公鼠，一组 High-fat diet(HFD, 包含60%fat), 一组 ND Normal fat-diet(N
 
 ## spermRNA 的亚群
 
->H. Peng, J. Shi, Y. Zhang, H. Zhang, S. Liao, W. Li, L. Lei, C. Han, L. Ning, Y. Cao, Q. Zhou, Q. Chen, E. Duan, A novel class of tRNA-derived small RNAs extremely enriched in mature mouse sperm. Cell Res. 22, 1609–1612 (2012). Medline doi:10.1038/cr.2012.141
+```
+H. Peng, J. Shi, Y. Zhang, H. Zhang, S. Liao, W. Li, L. Lei, C. Han, L. Ning, Y. Cao, Q. Zhou, Q. Chen, E. Duan, A novel class of tRNA-derived small RNAs extremely enriched in mature mouse sperm. Cell Res. 22, 1609–1612 (2012). Medline doi:10.1038/cr.2012.141
+```
 
 ### smallRNA-seq 测序质量
 通过 smallRNA-seq, 检查精子 sncRNA(18-40bp) 的图谱[Figure S4](#FigureS4)。
