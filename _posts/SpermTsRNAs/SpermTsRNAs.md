@@ -1,3 +1,12 @@
+---
+title: [20160111组会]Sperm tsRNAs contribute to intergenerational inheritance of an acquired metabolic disorder
+tagline: ""
+last_updated: 2016-01-11
+category: Journal Club
+layout: post
+tags : [Sperm, transgenic, tsRNAs]
+---
+
 # Sperm tsRNAs contribute to intergenerational inheritance of an acquired metabolic disorder
 
 huboqiang@gmail.com
@@ -11,7 +20,7 @@ huboqiang@gmail.com
  <a name="Author2"></a>![Figure 1S](image/2016-01-11-SpermTsRNAs/author2.png)
 [Chen Qi](#Author2). 
 
-## Table of Content
+## Overview
 1. 建立F0代动物模型
 2. 分别用 HFD（高脂肪饮食）、ND（正常饮食）的F0代精子繁育 F1 代
 3. 注射精子的总RNA，也会引起问题
