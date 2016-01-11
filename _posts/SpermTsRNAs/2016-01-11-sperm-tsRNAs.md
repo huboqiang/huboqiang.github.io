@@ -194,7 +194,7 @@ spermRNA 中，引起隔代遗传，在代谢相关最重要的 RNA 亚群，
 - 在 ND 与 HFD之间， 有 28 个基因找出了差异甲基化区域。
 - 然而，这些差异甲基化区域与差异表达基因之间没有交集。
 
-<a name="Figure4A"></a>![Figure 4A](/images/2016-01-11-SpermTsRNAs/fig4.A.png.pdf)
+<a name="Figure4A"></a>![Figure 4A](/images/2016-01-11-SpermTsRNAs/fig4.A.png)
 [Figure 4A](#Figure4A)
 
 ```
@@ -213,7 +213,7 @@ spermRNA 中，引起隔代遗传，在代谢相关最重要的 RNA 亚群，
 <a name="Figure4BC"></a>![Figure 4B, C](/images/2016-01-11-SpermTsRNAs/fig4.BC.png)
 [Figure 4B, C](#Figure4BC)
 
-<a name="TabS11"></a>![Table S11](/images/2016-01-11-SpermTsRNAs/tabS11.pdf)
+<a name="TabS11"></a>![Table S11](/images/2016-01-11-SpermTsRNAs/tabS11.png)
 [Table S11](#TabS11)
 
 ### tsRNAs 结合位点
