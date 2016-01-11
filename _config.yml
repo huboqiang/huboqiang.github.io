@@ -27,12 +27,12 @@ redcarpet:
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : Thomas Zhao Studio
+title : Boqiang Hu Studio
 tagline: Site Tagline
 author :
-  name : Thomas Zhao
-  email : centipedecn@gmail.com
-  github : thomaszhao
+  name : Boqiang Hu
+  email : huboqiang@gmail.com
+  github : hubqoaing
   #twitter : username
   #feedburner : feedname
 
@@ -44,9 +44,9 @@ author :
 # Else if you are pushing to username.github.io, replace with your username.
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
-production_url : http://www.thomaszhao.cn
-production_sitename : www.thomaszhao.cn
-repository_url: https://github.com/thomaszhao/thomaszhao.github.io/blob/master/
+production_url : http://http://hubqoaing.github.io
+production_sitename : http://hubqoaing.github.io
+repository_url: https://github.com/hubqoaing/hubqoaing.github.io
 
 #  specify configuration in the pages and posts for your site.
 defaults:

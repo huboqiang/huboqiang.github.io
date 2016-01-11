@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Thomas Zhao's Blog
+title: Boqiang Hu's Blog
 tagline: Make the Web Better
 ---
 {% include JB/setup %}
