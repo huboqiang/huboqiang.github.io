@@ -65,7 +65,7 @@ F0 公鼠，一组 High-fat diet(HFD, 包含60%fat), 一组 ND Normal fat-diet(N
 现象:
 
 - 体重没有显著差异 [Figure 1A](#Figure1)
-- HFD 组后代相比 ND组后代，在 GTT 中，在 15 周时，产生了严重的高血糖不耐受 [Figure 1B](#Figure1) 以及高胰岛素水平 [Figure 1B](#Figure1)。
+- HFD 组后代相比 ND组后代，在 GTT 中，在 15 周时，产生了严重的高血糖不耐受 [Figure 1B](#Figure1) 以及高胰岛素水平 [Figure 1C](#Figure1)。
 - 而 ITT 测试结果则显示，胰岛素敏感性在 HFD 与 ND 组差别不大 [Figure 1D](#Figure1)。**与精卵结合结果不同** [Figure S2D, E, F](#FigureS2)
 - 7 周时， 这一现象就已经出现 [Figure 3S](#FigureS3)。
 
@@ -82,6 +82,8 @@ F0 公鼠，一组 High-fat diet(HFD, 包含60%fat), 一组 ND Normal fat-diet(N
 ```
 
 ## spermRNA 的亚群
+
+>H. Peng, J. Shi, Y. Zhang, H. Zhang, S. Liao, W. Li, L. Lei, C. Han, L. Ning, Y. Cao, Q. Zhou, Q. Chen, E. Duan, A novel class of tRNA-derived small RNAs extremely enriched in mature mouse sperm. Cell Res. 22, 1609–1612 (2012). Medline doi:10.1038/cr.2012.141
 
 ### smallRNA-seq 测序质量
 通过 smallRNA-seq, 检查精子 sncRNA(18-40bp) 的图谱[Figure S4](#FigureS4)。
