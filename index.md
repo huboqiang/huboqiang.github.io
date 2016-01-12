@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Boqiang Hu's Blog
-tagline: Make the Web Better
+tagline: Big data programming about bioinformatics
 ---
 {% include JB/setup %}
 
