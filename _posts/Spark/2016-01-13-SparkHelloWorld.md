@@ -58,7 +58,7 @@ At the beginning, this file should be put into the HDFS:
 
 Then, a helloworld script for my hadoop:
 
-### First, read the input file:
+### 1. Read the input file:
 
 ```python
 # -*- coding: utf-8 -*-
@@ -80,7 +80,8 @@ state_data_used = state_data.map(lambda line: line.split("\t"))
 
 ```
 
-### Second, replace inf with the max value
+### 2. replace the inf value and map region to the value.
+
 ```python
 # get the maximum value
 maxVal = state_data_used.map(lambda fields: float(fields[3])).filter(func_notInf).reduce(lambda x, y: max(x, y))
@@ -93,36 +94,37 @@ def func_giveVal(x):
         return_val = -1*maxVal
     return return_val
 ```
-####1. replace the inf value and map region to the value.
-####2. preparing the input for the reduce function.
+
+### 3. preparing the input for the reduce function.
    e.g. 
-```[('Reg1', 1), ('Reg1', 2), ('Reg2', 3), ('Reg2', 4)] => ["Reg1" : [1, 2], "Reg2" : [3, 4]]```
+
+[('Reg1', 1), ('Reg1', 2), ('Reg2', 3), ('Reg2', 4)] => ["Reg1" : [1, 2], "Reg2" : [3, 4]]
 
 ```python
 state_groupped_pval = state_data_used.map(lambda fields: (fields[4], func_giveVal(fields[3]) )).groupByKey().mapValues(list)
 ```
 
-####3. using numpy to get the average value and s.e.m value. 
+### 4. using numpy to get the average value and s.e.m value. 
 Admittedly, for get the average value, ```reduce(lambda x, y: x+y)/LengthOfRegion``` could be a better choice, but as **no good way for s.e.m or some thing like median**, here numpy were used.
 
 ```python
 state_groupped_cnt = state_groupped_pval.map( lambda (k, v): (k, np.array(v, dtype="float").mean(), np.array(v, dtype="float").std()/len(v) ) )
 ```
 
-####4. Put the RDD into system memory.
+### 5. Put the RDD into system memory.
 
 ```python
 l_groupped_cnt = state_groupped_cnt.collect()
 pd_groupped_cnt = pd.DataFrame(l_groupped_cnt, columns = ['Type', 'Value', 'SE', 'Count'])
 ```
 
-####5. Sort the frame according to the value by decreasing order, then put it into a text file for plotting.
+### 6. Sort the frame according to the value by decreasing order, then put it into a text file for plotting.
 ```python
 pd_groupped_cnt_out = pd_groupped_cnt.sort(['Value'], ascending=False)
 pd_groupped_cnt_out.to_csv('/data/hadoop/study_spark/test.out.xls', index=False, sep="\t")
 ```
 
-##3. The output file:
+## 3. The output file:
 
 ```bash
 head /data/hadoop/study_spark/test.out.xls
