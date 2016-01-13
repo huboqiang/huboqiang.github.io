@@ -24,7 +24,6 @@ Test for `back quote`:
 
 ## 测试链接其他博文：
 
-[适合程序员的Blog -- 基于github pages + jekyll + markdown打造自己的blog]({% post_url /myblog/2015-01-08-how-do-i-build-this-jekyll-blog %})
 
 
 ## 测试换行：
