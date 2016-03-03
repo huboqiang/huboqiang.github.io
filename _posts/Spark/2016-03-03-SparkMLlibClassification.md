@@ -226,7 +226,7 @@ val matrixSummary = matrix.computeColumnSummaryStatistics()
 
 case class MatrixInfo(index:Int, mean: Double, variation: Double)
 val value_RowMean = matrixSummary.mean.toArray
-val value_RowVar  = matrixSummary.mean.toArray
+val value_RowVar  = matrixSummary.variance.toArray
 
 val Info = (0 to value_RowMean.length-1 toList).map{i =>
     MatrixInfo(i, value_RowMean(i), value_RowVar(i))
