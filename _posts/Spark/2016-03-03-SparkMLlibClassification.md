@@ -241,11 +241,13 @@ These results can be shown directly with Zeppelin:
 SELECT index, mean FROM Info
 ORDER BY index
 ```
+![png](/images/2016-03-03-SparkMLlibClassification/FigVar.png)
 
 ```sql
 SELECT index, variation FROM Info 
 ORDER BY index
 ```
+![png](/images/2016-03-03-SparkMLlibClassification/FigVar.png)
 
 Let's see the mean and variation. In the raw format, the distribution of data did not follow the Gaussian distribution. So let's make a z-score normalization:
 
