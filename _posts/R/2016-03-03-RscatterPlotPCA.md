@@ -63,7 +63,7 @@ library(gridExtra)
 
 Try:
 
-```{r}
+```r
 p<-ggplot(df_out,aes(x=PC1,y=PC2,color=group ))
 p<-p+geom_point()
 p
@@ -92,11 +92,10 @@ p
 
 ## 3.3 Put the words on the figure:
 
-```{r}
+```r
 p<-ggplot(df_out,aes(x=PC1,y=PC2,color=group, label=row.names(df) ))
 p<-p+geom_point()+ geom_text(size=3)+theme
 p
-
 ```
 
 ![png](/images/2016-03-03-PCAggplot2/Fig4.png)
