@@ -9,32 +9,32 @@ _high variance_ means __OVER FIT__
 B => U 
 V => O
 
-![png](/image/2016-03-07-MLDiagnose/1457341545509.png)
+![png](/images/2016-03-07-MLDiagnose/1457341545509.png)
 
-![png](/image/2016-03-07-MLDiagnose/1457341777493.png)
+![png](/images/2016-03-07-MLDiagnose/1457341777493.png)
 
 ##Regularization and Bias/Variance
 Low lambda => overfit
 High lambda => underfit
 
-![png](/image/2016-03-07-MLDiagnose/1457341842806.png)
+![png](/images/2016-03-07-MLDiagnose/1457341842806.png)
 
-![png](/image/2016-03-07-MLDiagnose/1457341978208.png)
+![png](/images/2016-03-07-MLDiagnose/1457341978208.png)
 
 
 ## Learning curves
 Condition 1： High  bias
-![png](/image/2016-03-07-MLDiagnose/1457341307212.png)
+![png](/images/2016-03-07-MLDiagnose/1457341307212.png)
 more training data is __not__ likely to help.
 
 Condition 2：High variance
-![png](/image/2016-03-07-MLDiagnose/1457341349249.png)
+![png](/images/2016-03-07-MLDiagnose/1457341349249.png)
 more training data is likely to help.
 
 ## Deciding what to do next revisited
 Solution for bias/variance.
 
-![png](/image/2016-03-07-MLDiagnose/1457342126653.png)
+![png](/images/2016-03-07-MLDiagnose/1457342126653.png)
 Action | Result  | Reason
 -------|--------|-------
 more training sets | fix high variance | More training sets so no overfit
@@ -64,4 +64,4 @@ Using CV to train the degree of polynomial d or lambda:
 	- y = error for both training and cross validation (two lines)
 		- CV error and test set error will be very similar 
 
-![png](/image/2016-03-07-MLDiagnose/1457343469186.png)
+![png](/images/2016-03-07-MLDiagnose/1457343469186.png)
