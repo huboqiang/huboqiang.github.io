@@ -1,3 +1,12 @@
+---
+title: "Machine Learning Diagnose"
+tagline: ""
+last_updated: 2016-03-07
+category: Machine Learning
+layout: post
+tags : [Machine learning, Model selection]
+---
+
 # Machine Learning Diagnose：
 
 [http://www.holehouse.org/mlclass/10_Advice_for_applying_machine_learning.html](http://www.holehouse.org/mlclass/10_Advice_for_applying_machine_learning.html)
