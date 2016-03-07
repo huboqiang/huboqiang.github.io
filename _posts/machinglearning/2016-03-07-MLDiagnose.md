@@ -44,6 +44,7 @@ more training data is likely to help.
 Solution for bias/variance.
 
 ![png](/images/2016-03-07-MLDiagnose/1457342126653.png)
+
 Action | Result  | Reason
 -------|--------|-------
 more training sets | fix high variance | More training sets so no overfit
