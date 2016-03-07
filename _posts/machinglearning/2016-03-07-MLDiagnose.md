@@ -51,8 +51,8 @@ more training sets | fix high variance | More training sets so no overfit
 Less features | fix high variance | Less parameters so no overfit
 More features | fix high bias | More parameters so no underfit
 More polynomial features | fix high bias | More parameters so no under-fit
-Decreasing $\lambda$ | fix high bias | low $\lambda => $ more parameters
-Increasing $\lambda$ | fix high variance | high $\lambda => $ less parameters
+Decreasing $$\lambda$$ | fix high bias | low $$\lambda => $$ more parameters
+Increasing $$\lambda$$ | fix high variance | high $$\lambda => $$ less parameters
 
 
 # Improved model selection
