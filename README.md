@@ -1,5 +1,5 @@
 
-## [Boqiang Hu's Blog](http://hubqoaing.github.io)
+## [Boqiang Hu's Blog](http://huboqiang.github.io)
 
 This is my personal blog and wiki, I will post kinds of technology articles on it.
 

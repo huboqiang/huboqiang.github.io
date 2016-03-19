@@ -150,9 +150,9 @@ cd /opt/apps/spark-1.4.1-bin-hadoop2.6/bin
 	--master yarn-cluster --num-executors 50
 ```
 
-多说几句，[上一篇日志](http://hubqoaing.github.io/2016/01/13/SparkHelloWorld) 里面，如果不设置 ```--driver-memory 7G``` ```--executor-memory 5G``` 的话，会造成程序最多使用 2G 内存，然后这个输入文件为 3G 的话，程序无法进行，会自动退出。这里使用这两个参数，可以将程序调用的内存增大，进而保证程序成功运行。
+多说几句，[上一篇日志](http://huboqiang.github.io/2016/01/13/SparkHelloWorld) 里面，如果不设置 ```--driver-memory 7G``` ```--executor-memory 5G``` 的话，会造成程序最多使用 2G 内存，然后这个输入文件为 3G 的话，程序无法进行，会自动退出。这里使用这两个参数，可以将程序调用的内存增大，进而保证程序成功运行。
 
-这个 submit 命令中， ```analysis.py ``` 如下， 与[上一篇日志](http://hubqoaing.github.io/2016/01/13/SparkHelloWorld) 基本相同。
+这个 submit 命令中， ```analysis.py ``` 如下， 与[上一篇日志](http://huboqiang.github.io/2016/01/13/SparkHelloWorld) 基本相同。
 
 ```python
 # -*- coding: utf-8 -*-
