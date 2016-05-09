@@ -1,5 +1,5 @@
 ---
-title: "[DevelopmentalTool]My DevelopmentalTools and environments."
+title: "Use multiple CPU Cores with your Linux commands — awk, sed, bzip2, grep, wc, etc."
 tagline: ""
 last_updated: 2016-05-09
 category: tools
