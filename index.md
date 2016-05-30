@@ -5,6 +5,10 @@ tagline: Big data programming about bioinformatics
 ---
 {% include JB/setup %}
 
+
+## Self-introduction
+My [Curriculum Vitae(CV)](https://rawgithub.com/huboqiang/huboqiang.github.io/master/images/2016-05-31-CV/cv_12.svg).
+
 ## This blog mainly includes my study notes about
 
 ### 1. programming language:
