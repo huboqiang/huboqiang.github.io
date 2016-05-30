@@ -1,4 +1,4 @@
 #!/bin/sh
 
 rm -rf _site/*
-jekyll serve -H 192.168.1.21
+jekyll serve -H 127.0.0.1
