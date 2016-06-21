@@ -189,7 +189,7 @@ The result gets:
         │   ├── ...
 ```
 
-## 4. How to submit the job
+## 5. How to submit the job
 
 The task could be initiated using  command ```spark-submit```:
 
