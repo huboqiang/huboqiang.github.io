@@ -136,7 +136,8 @@ object NAStatCounter extends Serializable {
 
 ```
 
-## 3. How to complile
+## 4. How to complile
+
 Here, we used ```sbt``` for compiling, which is much easier than ```maven```
 
 The organization for the file structure is like this:
