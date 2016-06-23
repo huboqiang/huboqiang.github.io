@@ -248,13 +248,14 @@ sdf_local <- fread('/Software/hadoop-2.6.0/bin/hdfs dfs -text "hdfs://tanglab1:9
 
 colnames(sdf_local) <- c("Region",	"SubRegion",	"MeanValue",	"StdValue",	"CountValue",	"CountNA")
 df_order <- sdf_local[CountValue > 5000][order(MeanValue, decreasing = T)]
-
+df_order$Se <- df_order$StdValue / df_order$CountValue**0.5
 df_order$SubRegion <- factor(df_order$SubRegion, levels = unique(df_order$SubRegion))
 
 theme<-theme(panel.background = element_blank(),panel.border=element_rect(fill=NA),panel.grid.major = element_blank(),panel.grid.minor = element_blank(),strip.background=element_blank(),axis.text.x=element_text(colour="black"),axis.text.y=element_text(colour="black"),axis.ticks=element_line(colour="black"),plot.margin=unit(c(5,1,1,1),"line"))
 
 p<-ggplot(df_order,aes(x=SubRegion,y=MeanValue, fill=factor(SubRegion)))
 p<-p+geom_bar(position=position_dodge(), stat="identity")+
+  geom_errorbar(aes(ymin=MeanValue-1.96*Se,ymax=MeanValue+1.96*Se),width=0.5,size=0.4,position=position_dodge(.9))+
   ylab("Density")+labs(title="")+
   theme(axis.text.x=element_text(angle=45,hjust=1),legend.key=element_rect(fill=NA),legend.text = element_text(size=8))+theme
 
