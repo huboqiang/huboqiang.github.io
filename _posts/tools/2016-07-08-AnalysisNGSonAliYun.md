@@ -1,10 +1,10 @@
 ---
-title: "[DevelopmentalTool]My DevelopmentalTools and environments."
+title: "[Docker]使用阿里云分析高通量测序数据—— RNA-Seq 与 ChIP-Seq."
 tagline: ""
-last_updated: 2016-03-21
+last_updated: 2016-07-08
 category: tools
 layout: post
-tags : [tools, environments]
+tags : [tools, environments, docker]
 ---
 
 # 使用阿里云分析高通量测序数据—— RNA-Seq 与 ChIP-Seq
