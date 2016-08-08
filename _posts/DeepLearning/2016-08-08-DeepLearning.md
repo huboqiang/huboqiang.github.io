@@ -7,7 +7,7 @@ layout: post
 tags : [Deep Learning]
 ---
 
-# Using Deep Learning to detect DNR-regulatory elements
+# Using Deep Learning to detect DNA-regulatory elements
 
 
 <script src="/assets/blog20160808/js/foreign/d3.v3.min.js" charset="utf-8"></script>
