@@ -1,0 +1,948 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+
+<!-- Page 1 -->
+<svg x="0" y="0" width="935" height="1210" viewBox="0 0 935 1210" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+style="display: block;margin-left: auto;margin-right: auto;">
+<defs>
+
+<style type="text/css"><![CDATA[
+
+.g2_1{
+fill: none;
+stroke: #000000;
+stroke-width: 1;
+stroke-linecap: butt;
+stroke-linejoin: miter;
+}
+.g1_1{
+fill: none;
+stroke: #2B2B2B;
+stroke-width: 1;
+stroke-linecap: butt;
+stroke-linejoin: miter;
+}
+
+.s3_1{
+font-size: 16.74px;
+font-family: Raleway-Medium_2p;
+fill: #2B2B2B;
+}
+.s5_1{
+font-size: 18.26px;
+font-family: Lato-Bold_2r;
+fill: #2B2B2B;
+}
+.s7_1{
+font-size: 16.74px;
+font-family: Lato-Regular_2s;
+fill: #2B2B2B;
+}
+.s9_1{
+font-size: 12.18px;
+font-family: Lato-Italic_2u;
+fill: #2B2B2B;
+}
+.s6_1{
+font-size: 16.74px;
+font-family: Lato-Light_2q;
+fill: #2B2B2B;
+}
+.s1_1{
+font-size: 12.18px;
+font-family: Raleway-ExtraLight_2n;
+fill: #666666;
+}
+.s8_1{
+font-size: 16.74px;
+font-family: Lato-Regular_3r;
+fill: #2B2B2B;
+}
+.s10_1{
+font-size: 15.22px;
+font-family: Raleway-Medium_2p;
+fill: #2B2B2B;
+}
+.s11_1{
+font-size: 15.22px;
+font-family: Lato-Light_2q;
+fill: #2B2B2B;
+}
+.s13_1{
+font-size: 16.74px;
+font-family: Lato-Light_3k;
+fill: #2B2B2B;
+}
+.s12_1{
+font-size: 15.22px;
+font-family: Lato-Light_3k;
+fill: #2B2B2B;
+}
+.s4_1{
+font-size: 24.35px;
+font-family: Lato-Light_2q;
+fill: #2B2B2B;
+}
+.s2_1{
+font-size: 60.88px;
+font-family: Lato-Hairline_2o;
+fill: #000000;
+}
+
+]]></style>
+
+</defs>
+<path d="M0,0
+L0,1210
+L935,1210
+L935,0 Z " 
+fill="#FFFFFF" stroke="none" />
+<text 
+x="723" 
+y="27" 
+dx="0,0,0,0,0,0.2,0,0,0,-0.1,0,0,0,0.2,0,0,0.2,0,0,0,0,0.2,-0.1,0,0,0,0,0,0,0.2,0,0,-0.1" 
+class="s1_1"
+>Last Updated on 19th January 2017</text>
+
+<text 
+x="312" 
+y="75" 
+dx="0,0,0,-3.5,0,0,0,0,0,0" 
+class="s2_1"
+>Hu Boqiang</text>
+
+<text 
+x="275" 
+y="107" 
+dx="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1.4,-0.1,0,0,0,0,0,0,0,0,0,0,0,0" 
+class="s3_1"
+>huboqiang@pku.edu.cn, Mobile: +8615210615922</text>
+
+<path d="M0.5,125.5l935,0" class="g1_1" />
+<text 
+x="54" 
+y="180" 
+dx="0,0,0,0,0,-1.3,0,0,0" 
+class="s4_1"
+>EDUCATION</text>
+
+<text 
+x="54" 
+y="206" 
+dx="0,0,0,0,0,0,0,-1,0,0,0,0,0,0,0,0,0" 
+class="s5_1"
+>PEKING UNIVERSITY</text>
+
+<text 
+x="54" 
+y="226" 
+dx="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" 
+class="s3_1"
+>PHD CANDIDATE IN BIOLOGICAL</text>
+
+<text 
+x="54" 
+y="246" 
+dx="0,0,0,0,0,0,0,0,0,0" 
+class="s3_1"
+>TECHNOLOGY</text>
+
+<text 
+x="54" 
+y="265" 
+dx="0,0,0,0,0,0,0,0,0,-3.3,0,0,0,0,0,0,0,0,0,0" 
+class="s3_1"
+>DIRECTOR:TANG FUCHOU</text>
+
+<text 
+x="54" 
+y="285" 
+dx="0,0,0,0,0,0,0,-0.9,0,0,-1,0,0,0,0,-0.9,0,0,0,0,0,0" 
+class="s6_1"
+>School of Life Science</text>
+
+<text 
+x="54" 
+y="305" 
+dx="0,0,0,0,0,0,0,0,0,0,0.2,0,0,0,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,0,0" 
+class="s6_1"
+>Expected. June 2018 | Beijing</text>
+
+<text 
+x="54" 
+y="335" 
+dx="0,0,0,0,0,0,0,0,-1,0,0,0,0,0,0,0,0,0,-1,0" 
+class="s5_1"
+>BEIJING INSTITUDE OF</text>
+
+<text 
+x="54" 
+y="356" 
+dx="0,0,0,0,0,0,0,-0.7,0,0" 
+class="s5_1"
+>TECHNOLOGY</text>
+
+<text 
+x="54" 
+y="376" 
+dx="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" 
+class="s3_1"
+>BS IN BIOLOGICAL ENGINEERING</text>
+
+<text 
+x="54" 
+y="395" 
+dx="0,0,0,0,0,0,0,-0.9,0,0,-1,0,0,0,0,-0.9,0,0,0,0,0,0" 
+class="s6_1"
+>School of Life Science</text>
+
+<text 
+x="54" 
+y="415" 
+dx="0,0,-0.4,0,0,-1,0,0,0,-1,0,0,0,0,-1,0,-1,0,0,0,0,0,0" 
+class="s6_1"
+>Grad Jun 2013 | Beijing</text>
+
+<text 
+x="54" 
+y="435" 
+dx="0,0,0,0,0,0.2,0,-0.9,0,0,-1,0,0,0,0,0,0,0,0,0,-0.9,0,0,0" 
+class="s6_1"
+>Cum. GPA: 3.5/4(top 10%)</text>
+
+<text 
+x="54" 
+y="484" 
+dx="0,0,0,0,0" 
+class="s4_1"
+>LINKS</text>
+
+<text 
+x="54" 
+y="508" 
+dx="0,-0.2,0,0,0,0,0,0,0,0,0,0,0" 
+class="s6_1"
+>PersonalBlog:</text>
+
+<text 
+x="156" 
+y="508" 
+dx="0,0,0,0,0,0,0,0,0,0,0,0" 
+class="s7_1"
+>huboqiang.cn</text>
+
+<text 
+x="54" 
+y="528" 
+dx="0,0,0,0,0,0,0,0,0,0,0,0,0" 
+class="s6_1"
+>ResearchGate:</text>
+
+<text 
+x="54" 
+y="548" 
+dx="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" 
+class="s7_1"
+>researchgate.net/</text>
+
+<text 
+x="183" 
+y="548" 
+dx="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" 
+class="s8_1"
+>proﬁle/Boqiang_Hu</text>
+
+<text 
+x="54" 
+y="597" 
+dx="0,0,0,0,0,0,0,0,0,0" 
+class="s4_1"
+>COURSEWORK</text>
+
+<text 
+x="54" 
+y="622" 
+dx="0,0,0,0,0,-0.4,-1.3,0" 
+class="s5_1"
+>GRADUATE</text>
+
+<text 
+x="54" 
+y="642" 
+dx="0,0,0,0,0,0,0,-0.4,0,-1,0,0,0,0,0,0,0,-0.9,-0.3,0,0,0,0,0,0,0,-1" 
+class="s6_1"
+>Coursera Machine Learning •</text>
+
+<text 
+x="54" 
+y="662" 
+dx="0,0,0,0,0,0,0,0,0,0,0,0,-0.9,0,0,-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-0.9" 
+class="s6_1"
+>Methodology In Bioinformatics •</text>
+
+<text 
+x="54" 
+y="682" 
+dx="0,0,0,0,0,0,0,-0.9,0,0,0,0,0,0,0,0,-0.9,0,0,0,-0.9,0,0,0,0,0,0,0,0,0,0,0,0,0" 
+class="s6_1"
+>Genome medicine and Bioinformatics</text>
+
+<text 
+x="54" 
+y="702" 
+dx="0,0,-1,0,0,0,0,0,0,0,0,0,0" 
+class="s6_1"
+>• ChinaHadoop</text>
+
+<text 
+x="54" 
+y="721" 
+dx="0,0,0,0,0,0,0,0,0,0,0,0,0,0,-0.2,0,0,0,0,0,0,0,-1,0,-0.9,0,0,0,0,0,0" 
+class="s6_1"
+>Spark&amp;MachineLearning • Udacity</text>
+
+<text 
+x="54" 
+y="741" 
+dx="0,0,0,0,0,-1,-0.3,0,0,0,0,0,0" 
+class="s6_1"
+>Deep Learning</text>
+
+<text 
+x="54" 
+y="772" 
+dx="0,0,0,0,0,-0.4,0,0,0,0,-0.5,-1.3,0" 
+class="s5_1"
+>UNDERGRADUATE</text>
+
+<text 
+x="54" 
+y="791" 
+dx="0,0,0,0,0,0,0,0,0,0,0,0,0,0,-0.9,0,-1,0,0,0,0,0,0,0,0,0,-0.9,0,0,0,0,0,0,0,-0.9" 
+class="s6_1"
+>BioChenmistry • Molecular Biology •</text>
+
+<text 
+x="54" 
+y="811" 
+dx="0,0,0,0,0,0,0,0,0,0,0,0,0,-0.9,0,0,-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-0.9" 
+class="s6_1"
+>Introduction to Bioinformatics •</text>
+
+<text 
+x="54" 
+y="831" 
+dx="0,0,0,0,0,0,0,0,0,0,0,0,0,-0.9,0,0,-1" 
+class="s6_1"
+>Introduction to C</text>
+
+<text 
+x="54" 
+y="851" 
+dx="0,-0.2,0,-0.2,0,0,0,0,0,0,0,0,-0.7,0,-0.2,0,0,0,0,0" 
+class="s9_1"
+>(Graduation Project)</text>
+
+<text 
+x="54" 
+y="871" 
+dx="0,0,0,0,-0.9,0,0,0,0,0,0,0,0,0,-0.9,0,0,-1,0,0,0,-0.9,0,0,0,0,0,0,0,0,0,-0.9,0" 
+class="s6_1"
+>The detection of DNA mutations in</text>
+
+<text 
+x="54" 
+y="890" 
+dx="0,0,0,0,0,0,0,-0.9,0,0,0,0,-0.9,0,-0.5,0,0,-1,0,0,0,0,-0.4,0,0,0,0" 
+class="s6_1"
+>Glioma with Next Generation</text>
+
+<text 
+x="54" 
+y="910" 
+dx="0,0,0,0,0,0,0,0,0,0,0,-0.9,-1.8,0,0,0,0,0,0,0,0,-1" 
+class="s6_1"
+>Sequencing Technology.</text>
+
+<text 
+x="54" 
+y="959" 
+dx="0,0,0,0,0,0" 
+class="s4_1"
+>SKILLS</text>
+
+<text 
+x="54" 
+y="985" 
+dx="0,0,-0.4,0,0,0,0,0,0,0,0" 
+class="s5_1"
+>PROGRAMMING</text>
+
+<text 
+x="54" 
+y="1003" 
+dx="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" 
+class="s10_1"
+>Over 1000 lines:</text>
+
+<text 
+x="54" 
+y="1021" 
+dx="0,0,0,0,0,0" 
+class="s11_1"
+>Python</text>
+
+<text 
+x="54" 
+y="1040" 
+dx="0,0,0,0,0,-0.1,0,0,0,0,0,-0.1,0,0,-0.4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" 
+class="s11_1"
+>(Numpy+Scipy+Pandas+Matplotlib,</text>
+
+<text 
+x="54" 
+y="1058" 
+dx="0,0,0,0,0,0,-0.2,0,-0.9,0,-0.9,0,-0.9,0,-0.9,0,0,0,-0.9,0,-0.9,-0.2,0,0" 
+class="s11_1"
+>Django) • R • C++ • Perl</text>
+
+<text 
+x="54" 
+y="1088" 
+dx="0,-0.8,0,0,0,0,0,0,0" 
+class="s10_1"
+>Familiar:</text>
+
+<text 
+x="54" 
+y="1106" 
+dx="0,0,0,0,0,-0.8,0,0,0,0,0,0,0,-0.9,0,0,0,0,0" 
+class="s11_1"
+>LAMP website design</text>
+
+<text 
+x="54" 
+y="1125" 
+dx="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-0.8,0,-0.9,0,0,0,-0.8" 
+class="s11_1"
+>(Linux+Apache+MySQL+PHP) • git •</text>
+
+<text 
+x="54" 
+y="1143" 
+dx="0,0,0,0,-0.4,0,0,-0.9,0,-0.9,0,0,0,-0.8,0,0,-0.9,0,-0.9,-0.4,0,0,-0.9,0,-0.9,0,0,0,0,0,0,-0.9,0,-0.9,0,0,0,0" 
+class="s11_1"
+>docker • AliYun &amp; AWS • Hadoop &amp; Spark</text>
+
+<text 
+x="54" 
+y="1161" 
+dx="0,0,-0.9,0,0,0,0,0,0,-0.8,0,-0.9" 
+class="s11_1"
+>• Theano &amp; T</text>
+
+<text 
+x="138" 
+y="1161" 
+dx="0,0,0,0,0,0,0,0" 
+class="s12_1"
+>ensorﬂow</text>
+
+<text 
+x="335" 
+y="180" 
+dx="0,0,0,0,0,0,-0.5,0,0,-1.4,-1.4,0,0,0" 
+class="s4_1"
+>RESEARCH PAPER</text>
+
+<text 
+x="335" 
+y="206" 
+dx="0,0,0,0,0,0,0,0,0,-1,0,-0.5,0,0,0,0,0,0" 
+class="s5_1"
+>CO-FIRST ARTICALS:</text>
+
+<path d="M335.5,219.5l545,0" class="g2_1" />
+<text 
+x="335" 
+y="244" 
+dx="0,0,0,0,0,0,0,0,0,-1,0,0,-0.6,0,0,0" 
+class="s5_1"
+>CHIP-SEQ RNA-SEQ</text>
+
+<text 
+x="513" 
+y="244" 
+dx="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" 
+class="s3_1"
+>|JOURNAL OF BIOLOGICAL CHEMISTRY, 2015, 291.</text>
+
+<text 
+x="335" 
+y="276" 
+dx="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" 
+class="s3_1"
+>EPIGENOMIC LANDSCAPE OF HUMAN FETAL BRAIN, HEART, AND LIVER.</text>
+
+<text 
+x="355" 
+y="296" 
+dx="0" 
+class="s6_1"
+>•</text>
+
+<text 
+x="373" 
+y="296" 
+dx="0,0,0,0,0,0,0,0,0" 
+class="s13_1"
+>Identiﬁed</text>
+
+<text 
+x="444" 
+y="296" 
+dx="0,0,0,0,0,0,-1,0,0,0,0,0,0,0,0,0,0,-1,0,-0.9,0,0,0,0,0,0,-0.3,-0.9,0,0,0,0,0,0" 
+class="s6_1"
+>40181 enhancers, 7 tissue-/species</text>
+
+<text 
+x="697" 
+y="296" 
+dx="0,0,0,0,0,0,0" 
+class="s13_1"
+>speciﬁc</text>
+
+<text 
+x="753" 
+y="296" 
+dx="0,0,0,0,0,0,0,0" 
+class="s6_1"
+>enhancer</text>
+
+<text 
+x="373" 
+y="316" 
+dx="0,0,0,0,0,0,0,0,-0.9" 
+class="s6_1"
+>modules .</text>
+
+<text 
+x="355" 
+y="337" 
+dx="0,0,3.4,-0.6,0,0,0,0,-1,0,-1,0,0,0,0,0,-0.9,0,0,-1,0,0,0,0,0,-1,0,0,0,0,0,-0.9,0,0,0,-1,0,0,-1,0,0,0,0,0,0,-0.9,0,0,0,0,0,0,0,0,0,0,-0.9,0,0,0,0,-0.9,0,0,0" 
+class="s6_1"
+>• Found a group of genes which can be highly correlated with gene</text>
+
+<text 
+x="373" 
+y="357" 
+dx="0,-0.5,0,0,0,0,0,0,0,0,0" 
+class="s6_1"
+>expression.</text>
+
+<text 
+x="355" 
+y="378" 
+dx="0" 
+class="s6_1"
+>•</text>
+
+<text 
+x="373" 
+y="378" 
+dx="0,0,0,0,0,0,0,0,0" 
+class="s13_1"
+>Identiﬁed</text>
+
+<text 
+x="444" 
+y="378" 
+dx="0,0,0,0,0,-0.9,-0.5,-0.1,0,-1,0,-0.4,0,0,0,0,0,0,0,0,0,0,0,0,0,-0.9,0,0,0,0,0,0,0,-0.9,0,0,0,0,0,0,0,0,-1,0,0,-0.9,0,0,0,0,0,0,-0.3,-0.8,0,0,0,0,0,0" 
+class="s6_1"
+>some key transcriptional factors enriched in tissue-/sepcies</text>
+
+<text 
+x="373" 
+y="398" 
+dx="0,0,0,0,0,0,0" 
+class="s13_1"
+>speciﬁc</text>
+
+<text 
+x="429" 
+y="398" 
+dx="0,0,0,0,0,0,0,0,0,0" 
+class="s6_1"
+>enhancers.</text>
+
+<text 
+x="355" 
+y="419" 
+dx="0,0,3.4,0,-0.9,0,0,0,0,0,0,0,-1,0,0,0,0,0,0,0,0,-0.9,0,0,0,0,0,0,0,-0.9,-0.4,0,0,0,0,0,-1,0,0,0,0,-0.9,0,0,0,0,0,0,-0.9,0,0,0,0,0,0,0,0,-0.9,0,0,0,0,0,0,0,-0.9,0,0" 
+class="s6_1"
+>• A species dominant pattern rather than tissue dominant pattern for</text>
+
+<text 
+x="373" 
+y="439" 
+dx="0,0,0,0,0,0,0,0,0,-1,0,0,0,0,0,0" 
+class="s6_1"
+>enhancer signal.</text>
+
+<text 
+x="335" 
+y="474" 
+dx="0,0,0,-0.4,0,0,0,0,0,-1,0,0,0,-1,0,-1,0,0,-0.6,0,0,0" 
+class="s5_1"
+>CIRCULAR RNA &amp; RNA-SEQ</text>
+
+<text 
+x="577" 
+y="474" 
+dx="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-0.1,-1" 
+class="s3_1"
+>|GENOME BIOLOGY, 2016, 17.</text>
+
+<text 
+x="335" 
+y="506" 
+dx="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" 
+class="s3_1"
+>TRACING THE EXPRESSION OF CIRCULAR RNAS IN HUMAN</text>
+
+<text 
+x="335" 
+y="526" 
+dx="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" 
+class="s3_1"
+>PRE-IMPLANTATION EMBRYOS.</text>
+
+<text 
+x="355" 
+y="561" 
+dx="0,0,3.4,-1.3,-0.4,0,0,0,0,0,0,0,0,0,0,0,0,-1,0,0,0,0,0,0,0,0,0,-0.9,0,0,-1,0,0,0,0,0,-0.9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-0.9,0,-0.1,-0.2,0,0,0,0,0,0,0,0" 
+class="s6_1"
+>• Transcriptomic landscape of human pre-implantation development.</text>
+
+<text 
+x="355" 
+y="582" 
+dx="0,0,3.4,0,0,0,0,0,0,0,-0.9,0,0,-1,0,0,0,0,-0.9,0,0,-0.1,0,-1,0,0,0,0,0,0,-0.9,0,0,-1,0,0,0,0,0,-0.9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-0.9,0,0,0,0,-0.2,0,0" 
+class="s6_1"
+>• Changes in mRNA copy number in human pre-impolantation embryos.</text>
+
+<text 
+x="355" 
+y="603" 
+dx="0,0,3.4,0,0,0,0,-1,0,0,0,0,0,0,0" 
+class="s6_1"
+>• 2974 circRNAs</text>
+
+<text 
+x="485" 
+y="603" 
+dx="0,0,0,0,0,0,0,0,0" 
+class="s13_1"
+>identiﬁed</text>
+
+<text 
+x="556" 
+y="603" 
+dx="0,0,0,-0.9,0,0,0,0,0,-0.9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-0.9,0,0,0,0,-0.1,0,0" 
+class="s6_1"
+>in human pre-impolantation embryos.</text>
+
+<text 
+x="335" 
+y="638" 
+dx="0,0,0,-0.4,0,0,-0.7,0,0,0,0,-1.1,0,-1.3,-1.3,0,0,0,-1,0,-1,0,0,-0.6,0,0,0" 
+class="s5_1"
+>CHROMOTINE STATES &amp; RNA-SEQ</text>
+
+<text 
+x="634" 
+y="638" 
+dx="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" 
+class="s3_1"
+>|CELL RESEARCH, 2016, ONLINE.</text>
+
+<text 
+x="335" 
+y="670" 
+dx="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" 
+class="s3_1"
+>DNA METHYLATION AND CHROMATIN ACCESSIBILITY PROFILING</text>
+
+<text 
+x="335" 
+y="690" 
+dx="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" 
+class="s3_1"
+>OF MOUSE AND HUMAN FETAL GERM CELLS.</text>
+
+<text 
+x="355" 
+y="725" 
+dx="0" 
+class="s6_1"
+>•</text>
+
+<text 
+x="373" 
+y="725" 
+dx="0,0,0,0,0,0,0,0,0" 
+class="s13_1"
+>Identiﬁed</text>
+
+<text 
+x="444" 
+y="725" 
+dx="0,0,-0.1,-0.2,0,-0.4,0,0,-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-0.9,0,0,0,0,0,0,0,-0.9,0,0,-0.9,0,0,0,0,0,-0.6,0,0,0,0,0,-1,0,0,0" 
+class="s6_1"
+>several nucleosome-depleted regions in human/mouse FGCs</text>
+
+<text 
+x="355" 
+y="746" 
+dx="0,0,3.4,0,0,0,0,0,0,-0.9,0,0,0,0,-1,0,0,0,0,0,0,0,0,-0.9,0,0,0,-1,0,0,0,0,0,0,0,0,0,0,0,0,-0.9,0,0,0,-0.9,0,0,0,0,-0.9,0,0,0,0,-0.9,0,0,0,0,0,0,-0.9,0,0,0,0,0,0,0,0,0" 
+class="s6_1"
+>• Distal NDRs enriched the pluripotency and germ cell master regulators</text>
+
+<text 
+x="355" 
+y="768" 
+dx="0,0,3.4,0,0,0,0,0,0,-0.9,0,0,0,0,0,0,0,-0.9,0,-0.8,0,-1,0,0" 
+class="s6_1"
+>• Repeat element SVA are</text>
+
+<text 
+x="547" 
+y="768" 
+dx="0,0,0,0,0,0,0,0,0,0,0" 
+class="s13_1"
+>speciﬁcally</text>
+
+<text 
+x="628" 
+y="768" 
+dx="0,0,0,0,0,-1,0,0,-1,0,0,0,0,0,-0.9,0,0,0,0,0,0,0,0,-0.9,0,0,0,-0.9,0,0,0" 
+class="s6_1"
+>open in human germline and IAPs</text>
+
+<text 
+x="373" 
+y="787" 
+dx="0,0,0,0,-0.9,0,0,0,0" 
+class="s6_1"
+>for mouse</text>
+
+<text 
+x="335" 
+y="821" 
+dx="0,0,-0.5,0,0,0,0,0,0,-1,-1.4,0,-0.5,0,0,0,0,-1.4,-1.3,0,0,0" 
+class="s5_1"
+>ARTICALS PARTICIPATED:</text>
+
+<path d="M335.5,835.5l545,0" class="g1_1" />
+<text 
+x="335" 
+y="860" 
+dx="0,0,0,-0.6,0,0,0,0,-1,0,-1,0,0,0,-1,0,0,0,0,0,0,-1.3,0,0,0" 
+class="s5_1"
+>RNA-SEQ &amp; DNA METHYLATION</text>
+
+<text 
+x="619" 
+y="860" 
+dx="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-0.1,0,0,0,0,0,-0.1,-0.4,-0.3,0,0,0,0" 
+class="s3_1"
+>|CELL, 2015, 161(6):1437-1452.</text>
+
+<text 
+x="335" 
+y="892" 
+dx="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" 
+class="s3_1"
+>THE TRANSCRIPTOME AND DNA METHYLOME LANDSCAPES OF HUMAN</text>
+
+<text 
+x="335" 
+y="912" 
+dx="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" 
+class="s3_1"
+>PRIMORDIAL GERM CELLS.</text>
+
+<text 
+x="335" 
+y="944" 
+dx="0,0,0,-1,0,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,0,0,-0.9,0,0,-0.9,0,0,0,-1,0,0,0,0,0,0,0,0,-0.9,0,0" 
+class="s6_1"
+>My works were mainly in the sections of:</text>
+
+<text 
+x="355" 
+y="964" 
+dx="0,0,3.4,0,0,0,0,0,0,0,0,0,-0.9,0,0,0,0,0,0,-0.9,0,0,0,-1,0,0,0,0,0,0" 
+class="s6_1"
+>• Detecting stage- and tissue-</text>
+
+<text 
+x="574" 
+y="964" 
+dx="0,0,0,0,0,0,0" 
+class="s13_1"
+>speciﬁc</text>
+
+<text 
+x="630" 
+y="964" 
+dx="0,0,0,0,0,-0.9,0,0,0,0,0,0" 
+class="s6_1"
+>gene groups.</text>
+
+<text 
+x="355" 
+y="985" 
+dx="0,0,3.4,0,0,0,0,0,0,0,0,0,-0.9,0,0,0,-1,0,0,0,0,0,0,0,0,0,0,0,-0.9,0,0,0,0,0,0,0,-1,0,0,0,-0.9,0,0,0,-0.9,0,0,0,-1,0,0,0,-0.2,0,0,0,0,0,0,0,-0.9,0,-0.1,-0.2,0,0" 
+class="s6_1"
+>• Analysing the correlation between RNA and DNA methylation level.</text>
+
+<text 
+x="335" 
+y="1034" 
+dx="0,0,0,-1.4,0,0,0,0,0,0,-1.4,0,-0.5,0,0,0,0,0,0,-1.4,-1.4,0,-1.4,0,0,0,0,-1.3,0,0" 
+class="s4_1"
+>MY CODING PROJECTS TO MAINTAIN</text>
+
+<text 
+x="335" 
+y="1059" 
+dx="0,0,0,0,-0.9,0,0,0,0,0,0,0,0,0,-0.9,0,0,0,0,0,0,0,0,-0.9,0,0,0,-0.9,0,0,0,-1,0,0,0" 
+class="s6_1"
+>The analysing pipeline for our lab:</text>
+
+<text 
+x="355" 
+y="1078" 
+dx="0,0,3.4,0,0,-0.3,0,0,0,0" 
+class="s6_1"
+>• RNA-Seq:</text>
+
+<text 
+x="447" 
+y="1078" 
+dx="0,0,0,0,0,0,0,-1.1" 
+class="s7_1"
+>https://</text>
+
+<text 
+x="500" 
+y="1078" 
+dx="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" 
+class="s8_1"
+>github.com/huboqiang/RNA_v2</text>
+
+<text 
+x="355" 
+y="1100" 
+dx="0,0,3.4,0,0,0,0,0,0,0,0" 
+class="s6_1"
+>• ChIP-Seq:</text>
+
+<text 
+x="449" 
+y="1100" 
+dx="0,0,0,0,0,0,0,-1.1,-1.1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-0.4,0,0,0" 
+class="s7_1"
+>https://github.com/huboqiang/ChIP</text>
+
+<text 
+x="335" 
+y="1132" 
+dx="0,-0.2,0,0,0,0,0,0,-1,0,0,0,-0.9,0,0,0,-1,0,0,0,0,0,0,0,0,-0.9,0,0,0,-1,0,-0.1,-0.2,0,0,0,0,0,0,0" 
+class="s6_1"
+>Website for the pipeline now developing:</text>
+
+<text 
+x="355" 
+y="1152" 
+dx="0" 
+class="s6_1"
+>•</text>
+
+<text 
+x="373" 
+y="1152" 
+dx="0,0,0,0,0,0" 
+class="s7_1"
+>http:/</text>
+
+<text 
+x="413" 
+y="1152" 
+dx="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" 
+class="s8_1"
+>/166.111.152.116:13335</text>
+
+<text 
+x="463" 
+y="1223" 
+dx="0" 
+class="s11_1"
+>1</text>
+
+
+
+<!-- Any embedded fonts defined here -->
+<style type="text/css" ><![CDATA[
+
+@font-face {
+	font-family: Lato-Regular_2s;
+	src: url("fonts/Lato-Regular_2s.woff") format("woff");
+}
+
+@font-face {
+	font-family: Lato-Light_2q;
+	src: url("fonts/Lato-Light_2q.woff") format("woff");
+}
+
+@font-face {
+	font-family: Raleway-Medium_2p;
+	src: url("fonts/Raleway-Medium_2p.woff") format("woff");
+}
+
+@font-face {
+	font-family: Lato-Hairline_2o;
+	src: url("fonts/Lato-Hairline_2o.woff") format("woff");
+}
+
+@font-face {
+	font-family: Lato-Regular_3r;
+	src: url("fonts/Lato-Regular_3r.woff") format("woff");
+}
+
+@font-face {
+	font-family: Lato-Italic_2u;
+	src: url("fonts/Lato-Italic_2u.woff") format("woff");
+}
+
+@font-face {
+	font-family: Raleway-ExtraLight_2n;
+	src: url("fonts/Raleway-ExtraLight_2n.woff") format("woff");
+}
+
+@font-face {
+	font-family: Lato-Bold_2r;
+	src: url("fonts/Lato-Bold_2r.woff") format("woff");
+}
+
+@font-face {
+	font-family: Lato-Light_3k;
+	src: url("fonts/Lato-Light_3k.woff") format("woff");
+}
+
+]]></style>
+
+</svg>
