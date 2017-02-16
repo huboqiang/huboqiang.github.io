@@ -29,9 +29,94 @@ tags : [BigData]
 
 IBM data science 平台对注册用户首月免费，默认提供一个 2核 CPU，预装 Rstudio, Jupyter。同时 IBM 公司作为 Spark 项目的重要商业支持者，对自家的Spark 大数据计算完美支持。
 
-如果不使用 IBM data science 平台，也可以自己下载 [anaconda](https://www.continuum.io/downloads) 安装科学计算版 Python。但这样 [spark](http://spark.apache.org/downloads.html) 需要自己预装，特别是Spark 通常需要[预装 Hadoop](http://wuchong.me/blog/2015/04/04/spark-on-yarn-cluster-deploy/)，对生信菜鸟比较费事，大型机上管理员也不一定让你装。
+更重要的是，这个平台提供了很好的数据科学家相互交流的机会。编写的代码可以轻松在技术人员之间直接传阅，写完代码，最后的结果可以直接发给老板。
 
-所以我这里建议使用 IBM data science ，作为生信菜鸟，也来体验一把高大上的大数据+云计算。
+如果需要使用，首先需要在网站完成注册：
+
+![png](/images/2017-02-16-AnalyseTheAnnotationOfHumanGenome/step1.png)
+
+注册完成后，选择 DataHub
+
+![png](/images/2017-02-16-AnalyseTheAnnotationOfHumanGenome/step2.png)
+
+然后建立 Notebook，建立后的 Notebook 会在下面列出。
+
+![png](/images/2017-02-16-AnalyseTheAnnotationOfHumanGenome/step3.png)
+
+如果希望写个 HelloWorld，推荐你去简单画个图，源码位于 [matplotlib 官方 gallery](http://matplotlib.org/examples/pylab_examples/barchart_demo.html)，我们开个选择 Python，生成Jupyter Notebook 画一下：
+
+![png](/images/2017-02-16-AnalyseTheAnnotationOfHumanGenome/step4.png)
+
+然后把 matplotlib 上的这个例子的代码复制粘贴下来：
+
+
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+n_groups = 5
+
+means_men = (20, 35, 30, 35, 27)
+std_men = (2, 3, 4, 1, 2)
+
+means_women = (25, 32, 34, 20, 25)
+std_women = (3, 5, 2, 3, 3)
+
+fig, ax = plt.subplots()
+
+index = np.arange(n_groups)
+bar_width = 0.35
+
+opacity = 0.4
+error_config = {'ecolor': '0.3'}
+
+rects1 = plt.bar(index, means_men, bar_width,
+                 alpha=opacity,
+                 color='b',
+                 yerr=std_men,
+                 error_kw=error_config,
+                 label='Men')
+
+rects2 = plt.bar(index + bar_width, means_women, bar_width,
+                 alpha=opacity,
+                 color='r',
+                 yerr=std_women,
+                 error_kw=error_config,
+                 label='Women')
+
+plt.xlabel('Group')
+plt.ylabel('Scores')
+plt.title('Scores by group and gender')
+plt.xticks(index + bar_width / 2, ('A', 'B', 'C', 'D', 'E'))
+plt.legend()
+
+plt.tight_layout()
+plt.show()
+
+```
+
+![png](/images/2017-02-16-AnalyseTheAnnotationOfHumanGenome/step5.png)
+
+如图操作，就可以得到 matplotlib 官网上的图。
+
+神马？没有出图像？来，这里有个特殊的地方，需要在 import 完所有库之后，加一行 ```%matplotlib inline``` 魔法，允许直接在代码块下面显示，就像我图中写的那样。
+
+Jupyter Notebook 和 Rstudio 一样有很多方便好用的快捷键。具体可以点击 Help => ShortCut 看一下。Help 位于箭头挡住的 run 又上方。
+
+
+如果不使用 IBM data science 平台，也可以自己下载 [anaconda](https://www.continuum.io/downloads) 安装科学计算版 Python。但这样 [spark](http://spark.apache.org/downloads.html) 需要自己预装，特别是Spark 通常需要[预装 Hadoop](http://wuchong.me/blog/2015/04/04/spark-on-yarn-cluster-deploy/)，对生信菜鸟比较费事，大型机上管理员也不一定让你装。不过 anaconda 本身不使用 spark 加成，开 Jupyter Notebook 就已经十分强大了，建议大家试一试。
+
+我在我们的大型机的一个计算节点装好 anaconda 后，根据 Jupyter Notebook 官方文档，设定集群访问[http://jupyter-notebook.readthedocs.io/en/latest/public_server.html](http://jupyter-notebook.readthedocs.io/en/latest/public_server.html)，需要分析项目，会首先 cd 到项目所在的分析文件夹(鄙视放进 /home 目录里的人)， 接着 cmd 输入 ```jupyter notebook```，这样jupyter 会在后端挂起，然后访问 ```https://IP:PORT```，IP 是该集群的内网 IP，端口在上一步指定，默认 8888，注意是这里是 https 不是 http，然后允许打开网页，输入集群访问密码，就会进入管理页面，如图。
+
+新建Python Notebook 后，会直接进入该文件，管理页面里面会出现一个绿色的 ipynb 文件，linux shell 里面也能看见。
+
+这个文件就是Jupyter Notebook所在的文件，用法与 IBM datascience 的完全相同，大家也可以照着上图 HelloWorld 一下。
+
+
+![png](/images/2017-02-16-AnalyseTheAnnotationOfHumanGenome/step6.png)
+
+我这里建议，如果想体验一把 PySpark，使用 IBM data science ，即使是菜鸟，也可以来体验一把高大上的大数据+云计算。
 
 默认环境配置如下：
 
@@ -68,7 +153,7 @@ scipy-0.17.0
 simplejson-3.8.1
 ```
 
-首先把数据[上传到 IBM data 平台](http://datascience.ibm.com/blog/upload-files-to-ibm-data-science-experience-using-the-command-line-2/)。
+
 
 当然，在运行程序前，需要预装 python 的类似 ggplot2 画图包，方便作图。
 
@@ -141,6 +226,15 @@ Spark 源码是通过一种叫做 Scala 的语言编写的。Scala 是脱胎于 
 
 ```/hadoop/bin/hdfs dfs -put 外星人.GTF hdfs://[HDFS系统IP]:[HDFS系统端口]:[文件路径/外星人.GTF]```
 
+继续说正事，分析数据之前，必须做的一件事，就是上传数据。而上传数据的第一步，是得把数据先给下载下来。
+
+我们的数据，就是从 ftp://ftp.ensembl.org/pub/releas ... RCh38.87.chr.gtf.gz 下载的压缩状态的gtf 文件，不解压缩，直接[上传到 IBM data 平台](http://datascience.ibm.com/blog/upload-files-to-ibm-data-science-experience-using-the-command-line-2/)。
+
+方法如下：
+
+![png](/images/2017-02-16-AnalyseTheAnnotationOfHumanGenome/UploadFile.png)
+
+选择 Insert SparkSession Step 后，系统会自动生成一系列代码，如下，除 ```spark.read.text(path_1).show()```：
 
 代码块【3】：
 
@@ -334,6 +428,7 @@ rdd = spark.read.text(path_1).rdd\
 ```
 
 处理后的 rdd 长这样：
+
 ```python
 [[u'ENSG00000223972', 'NULL', 'NULL', u'1'],
  [u'ENSG00000223972', u'ENST00000456328', 'NULL', u'1'],
@@ -480,7 +575,7 @@ sqlDF_genesInEachChr.show()
     +-----+----+
     only showing top 20 rows
     
-
+运行过程时间有点长，请耐心等待。因为 IBM 的免费机器是 2 核心单机模式，体现不出 Spark 大数据分析的威力。如果你在几台 48 线程的机器上对一个大文件执行SparkSQL（前提是没人使用 + 满CPU使用），在等待的过程中去后台 top 一下，会看见计算节点上全部都是恐怖的 4800% 的 CPU 使用率，共同执行同一个任务。
 
 好啦，SparkSQL 的结果已经只有20+行了，此时可以收进内存里面了。
 
@@ -653,7 +748,7 @@ sns.distplot(pd_transInEachGene['Cnt'])
 画好了，拿给老板看，这个肯定得挨骂，不好看啊，长尾效应太明显。Python 作图微调效果如何？好用的话你画一个 0~25 的柱状分布呗？
 
 既然要微调，我就用原始的python 作图 matplotlib 库了，他和 seaborn 的关系如同 R 的 plot 与 ggolot2。
-matplotlib 库有非常精美的 [gallery](http://matplotlib.org/gallery.html)，代码拿来就能在jupyter上画，如果不显示图像请像我这里最开始import 一样加 %matplotlib inline 魔法。
+matplotlib 库有非常精美的 [gallery](http://matplotlib.org/gallery.html)，代码拿来就能在jupyter上画，再次强调，如果不显示图像请像我这里最开始import 一样加 %matplotlib inline 魔法。
 
 画之前先简单看下数据分布，类似 R 的 summary
 
