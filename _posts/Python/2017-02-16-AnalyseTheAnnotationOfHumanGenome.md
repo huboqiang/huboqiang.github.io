@@ -1,5 +1,5 @@
 ---
-title: "20170216 Python Spark]使用 IBM datascience 平台统计 hg38每条染色体基因,转录本的分布."
+title: "[20170216 Python Spark]使用 IBM datascience 平台统计 hg38每条染色体基因,转录本的分布."
 tagline: ""
 last_updated: 2017-02-16
 category: BigData
@@ -691,7 +691,6 @@ plt.xlim(0, 25)
 
 
 
-
 ![png](/images/2017-02-16-AnalyseTheAnnotationOfHumanGenome/output_23_1.png)
 
 
@@ -766,6 +765,8 @@ plt.xlim(0, 15)
     Median Value 4 
 
     (0, 15)
+    
+
 ![png](/images/2017-02-16-AnalyseTheAnnotationOfHumanGenome/output_26_2.png)
 
 
