@@ -1,7 +1,7 @@
 ---
 title: "[Docker]使用阿里云分析高通量测序数据—— RNA-Seq 与 ChIP-Seq."
 tagline: ""
-last_updated: 2016-07-08
+last_updated: 2017-03-20
 category: tools
 layout: post
 tags : [tools, environments, docker]
@@ -12,26 +12,38 @@ tags : [tools, environments, docker]
 ## 1. 在阿里云购买服务器
 
 ### 1.1 进入控制台，购买 ECS 云服务器
+
+阿里云的网页位于 [https://www.aliyun.com/](https://www.aliyun.com/)，进入注册后，点击登录控制台：
+
+![FigureConsole](/images/2016-07-08-AnalysisNGSonAliYum/Fig.AliMain.png)
+
 首先选择区域。我的 OSS 网络存储放在了华北2区，因此购买华北2区的服务器。
 
-![Figure 1](/images/2016-07-08-AnalysisNGSonAliYum/Fig1.Console.png)
+![Figure 1](/images/2016-07-08-AnalysisNGSonAliYum/Fig1.Console1.png)
+
+![Figure 1](/images/2016-07-08-AnalysisNGSonAliYum/Fig1.Console2.png)
+
 
 购买选项如下填写。
 
 ![Figure 2](/images/2016-07-08-AnalysisNGSonAliYum/Fig2.Buy.png)
 
-注意CPU 内存 选择较大的 4CPU x 16Gb 内存。这是进行生物信息学分析的最低配置，更高配置的机器可以在亚马逊 aws 上租到。同时，操作系统使用  CentOS 7 ，可以直接安装 docker。
+注意CPU 内存 选择较大的 4CPU x 16Gb 内存。这是进行生物信息学分析的最低配置，更高配置的机器可以在亚马逊 aws 上租到。同时，操作系统使用  ubuntu 16.04 64位 ，可以直接安装 docker。
 
 购买成功显示：
 
 ![Figure 3](/images/2016-07-08-AnalysisNGSonAliYum/Fig3.success.png)
+
+等了几分钟，收到了手机短信：
+
+![Figure 3](/images/2016-07-08-AnalysisNGSonAliYum/Fig.Messege.png)
 
 ### 1.2 登陆服务器
 
 在终端中登陆服务器：
 
 ```bash
-ssh  root@101.200.158.36
+ssh  root@123.57.10.97
 ```
 
 ![Figure 4](/images/2016-07-08-AnalysisNGSonAliYum/Fig4.loginServer.png)
@@ -39,8 +51,7 @@ ssh  root@101.200.158.36
 安装并启动 docker
 
 ```bash
-yum install -y docker
-service docker start
+apt-get install docker docker.io
 ```
 
 下载内网镜像:
@@ -50,91 +61,244 @@ docker pull registry.aliyuncs.com/hubq/tanginstall
 ```
 
 好了，稍等一段时间即可安装完成。
-
-运行镜像：
-
-```bash
-docker run -i -t registry.aliyuncs.com/hubq/tanginstall /bin/zsh
-```
-
 ## 2. 分析数据
+
+
+现在来进行项目实战。拉下来的 Docker 文件如下：[https://github.com/huboqiang/tangEpiNGSInstall](https://github.com/huboqiang/tangEpiNGSInstall)
+
+
+这个 Docker 可以对人鼠执行 RNA-Seq ChIP-Seq 的生物信息学基本流程分析。
+
+对于 ChIP-Seq 部分，对应的脚本使用Encode 的 IDR 流程。 IDR 流程详细介绍见[ENCODE 主页](https://www.encodeproject.org/software/idr/)，简而言之，就是一个考虑了多个重复样本的 ChIP-Seq 分析流程。
+
+
+今天我们着重介绍 RNA-Seq 部分。对于 RNA-Seq 部分，对应的脚本曾用于 [The Transcriptome and DNA Methylome Landscapes of Human Primordial Germ Cells](http://www.cell.com/cell/abstract/S0092-8674(15)00563-2) 这篇文章，相应描述如下：
+
+
+>Read pairs with more than 10% low-quality bases, adapter contaminants or artificial sequences introduced during the experimental processes were trimmed, and the cleaned reads were aligned to the human hg19 reference using Tophat (v2.0.12) with default settings (Trapnell et al., 2009). Additionally, 92 ERCC spike-ins were added to the reference annotation as the extra artificial transcripts. Cufflinks (v2.2.1) with default parameters was further used to assemble the transcripts and quantify transcription levels (FPKM, fragments per kilobase of transcript per million mapped reads) of annotated genes (Trapnell et al., 2010). Linear regression was applied to fit the data points between the averaged transcription levels of the 92 exogenous ERCC spike- in RNAs (log2 transformed) in each single-cell RNA-seq dataset and the provided number of molecules per lysis reaction for each single cell, and the absolute mRNA abundance in each single cell was calculated by normalizing against the spike-in RNAs (Treutlein et al., 2014). The expression level of repetitive elements was quantified using the read counts of repetitive elements per million RefSeq mappable reads only if the unique mapped reads were located in the annotated repetitive elements. Other published data, including those from human implantation embryos, human naïve ESCs, in vitro human PGCLCs, and mouse PGCs, were downloaded from the GEO datasets (Irie et al., 2015; Seisenberger et al., 2012; Takashima et al., 2014; Yamaguchi et al., 2013; Yan et al., 2013), and only the raw fastq reads were downloaded and incorporated into our analysis pipelines.
+
+
+OK，我们使用这篇文章的一个样本，来跑一下这个 RNA-Seq 的流程。
+
+### 2.1 获取数据
+
 
 建立项目文件夹
 
 ```bash
-pip install --user oss2
-mkdir -p /home/analyzer/project/ChIP_test/00.0.raw_data
-cd /home/analyzer/project/ChIP_test
-```
-
-
-
-### 2.1 将数据上传至服务器
-
-用以下脚本 ```load_data.py``` ，将数据从 OSS 网络存储上传至服务器。当然也可以根据官方文档使用其他方法。
-
-```python
-# -*- coding: utf-8 -*-
-import oss2
-import os
-from oss2 import SizedFileAdapter, determine_part_size
-from oss2.models import PartInfo
-import shutil
-
-auth = oss2.Auth('ACCESS_KEY', 'KEY_PASSWORD')
-service = oss2.Service(auth, 'oss-cn-beijing.aliyuncs.com')
-endpoint = 'oss-cn-beijing.aliyuncs.com'
-bucket = oss2.Bucket(auth, endpoint, 'hubqaliossbj')
-
-
-# as if the Object dir is in the root of the bucket:
-l_oss = ["12w-brain-k9me2-2.1.fq.gz", "12w-brain-k9me2-2.2.fq.gz", "input.1.fq.gz", "input.2.fq.gz"]
-for oss in l_oss:
-  remote_file = "project_"
-  remote_stream = bucket.get_object(oss)
-  server_file = "/home/analyzer/project/ChIP_test/00.0.raw_data/%s" % (oss)
-  with open(server_file, "wb") as local_fileobj:
-    shutil.copyfileobj(remote_stream, local_fileobj)
-```
-
-然后把文件夹放成如下格式：
+cd ~
+git clone https://github.com/huboqiang/tangEpiNGSInstall
 
 ```
-ls ~/project/ChIP_test/00.0.raw_data/*
-/home/analyzer/project/ChIP_test/00.0.raw_data/12w-brain-k9me2-2:
-12w-brain-k9me2-2.1.fq.gz  12w-brain-k9me2-2.2.fq.gz
 
-/home/analyzer/project/ChIP_test/00.0.raw_data/input:
-input.1.fq.gz  input.2.fq.gz
-```
-
-### 2.2 启动分析
-
-写一个 ```sample.tab.xls```, 格式如下，注意使用 tab 分割：
-
-```
-sample  stage   type    tissue  brief_name      merge_name      end_type        control
-12w-brain-k9me2-2 12Week  H3K9me2 brain Week12_brain_H3K9me2_rep1 Week12_brain_H3K9me2  PE  Week12_brain_input
-input 12Week  H3K9me2 brain Week12_brain_input_rep1 Week12_brain_input  PE  Week12_brain_input
-```
-
-由于是人类样本，执行如下命令：
+这一步是下载数据，如果读者有 RNASeq 数据，这里替换成自己的 fastq 文件即可。这里下载的数据因为是 SRA 格式，需要转换成 fastq:
 
 ```bash
-sed 's/is_debug=1/is_debug=0/g' ~/module/ChIP/run_chipseq.py  >run_chipseq.py
-python run_chipseq.py  --ref hg19 --TSS_genebody_up 5000 --TSS_genebody_down 5000 --TSS_promoter_up 5000 --TSS_promoter_down 5000 --Body_extbin_len 50 --Body_bincnt 100 --TSS_bin_len 1 --top_peak_idr 100000 sample.tab.xls
+mkdir fastq
+cd fastq
+
+wget ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByExp/sra/SRX/SRX102/SRX1021247/SRR2013442/SRR2013442.sra
+
+cd ~
+wget http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/2.8.2-1/sratoolkit.2.8.2-1-ubuntu64.tar.gz
+
+tar -zxvf sratoolkit.2.8.2-1-ubuntu64.tar.gz
+
+mkdir -p ./fastq/SRR2013442 && ./sratoolkit.2.8.2-1-ubuntu64/bin/fastq-dump --split-3 --outdir ./fastq/SRR2013442  -gzip ./fastq/SRR2013442.sra
 ```
 
-这个命令第一步会下载网上的 fasta 文件，并且建立 bwa 软件的 index。建立的 index 放在 ```/home/analyzer/database_ChIP```， 这个文件建立后，可以传入 oss 中，下次分析时可以直接从 oss 取出放入 ```/home/analyzer/database_ChIP```， 避免重复运算。
+然后需要给样本起一个名字。这里直接借鉴 [https://github.com/huboqiang/tangEpiNGSInstall/blob/master/test_fq_RNA/sample.tab.xls](https://github.com/huboqiang/tangEpiNGSInstall/blob/master/test_fq_RNA/sample.tab.xls) 这个文件
+
+```bash
+cp ./tangEpiNGSInstall/test_fq_RNA/sample.tab.xls fastq/ &&\
+sed -i 's/SampleA1/SRR2013442/g' fastq/sample.tab.xls &&\
+sed -i 's/A1/M_PGC_4W_embryo3_sc1/g' fastq/sample.tab.xls
+
+cat fastq/sample.tab.xls
+```
+
+sample|	brief_name	|stage	|sample_group	|ERCC_time	|RFP_polyA	|GFP_polyA	|CRE_polyA	|end_type|	rename
+---|---|---|---|---|---|---|---|---|---|---
+SRR2013442|	M\_PGC\_4W\_embryo3\_sc1|	Group1	|RNA	|0.0|	0.0	|0.0	|0.0|	PE	|M\_PGC\_4W\_embryo3\_sc1
+
+如果有更多的输入文件，在这里依次写下来即可。
+
+Docker 流程的第一步会下载网上的 fasta 文件，并且建立 bwa 软件的 index。建立的 index 放在 docker 内部的 ```/home/analyzer/database_RNA```， 这个文件建立后，可以传入 oss 中，下次分析时可以直接从 oss 取出放入 ```/home/analyzer/database_RNA```， 避免重复运算。
+
+我这里由于已经有了 ref 文件，所以我直接从 OSS 下载，然后直接把这个文件夹挂在 Docker 的 ```/home/analyzer/database_ChIP``` 目录下即可。
+
+```bash
+pip install alioss
+osscmd.py config --host=hubqgenomeref.oss-cn-beijing-internal.aliyuncs.com --id=我的AccessKeyID --key=我的AccessKeySecret
+mkdir ./RefRNA
+osscmd.py downloadtodir oss://hubqgenomeref/Database_RNA_v2/hg19 ./RefRNA
+
+# 这里 RNA 部分不需要
+osscmd.py downloadtodir oss://hubqgenomeref/Database_ChIP_v2/mm10 ./RefChIP
+
+```
+
+### 2.2 执行流程
+
+此时文件结构如下：
+
+```
+.
+├── fastq
+│   ├── sample.tab.xls
+│   ├── SRR2013442
+│   │   ├── SRR2013442_1.fastq.gz
+│   │   └── SRR2013442_2.fastq.gz
+│   └── SRR2013442.sra
+├── RefChIP
+│   ├── chrom.sort.bed
+│   ├──....... 
+│   └── region.Intragenic.bed
+├── RefRNA
+│   ├── all.exon.sort.ERCC.gene.bed
+│   ├──.......
+│   └── splicing_sites.sh
+├── sratoolkit.2.8.2-1-ubuntu64
+│   ├── bin
+│   │   ├── abi-dump -> abi-dump.2
+│   ├──.......
+├── sratoolkit.2.8.2-1-ubuntu64.tar.gz
+└── tangEpiNGSInstall
+    ├── Dockerfile
+    ├── README.md
+    ├── settings
+    │   ├── run_chipseq.py
+    │   ├── run_mRNA.py
+    │   ├── scripts_chipseq.py
+    │   └── scripts_mRNA.py
+    ├── src
+    │   └── run_sample.sh
+    ├── test_fq
+    │   ├── H3K4me3
+    │   │   ├── test.1.fq.gz
+    │   │   └── test.2.fq.gz
+    │   ├── Input
+    │   │   ├── test.1.fq.gz
+    │   │   └── test.2.fq.gz
+    │   └── sample.tab.xls
+    └── test_fq_RNA
+        ├── SampleA1
+        │   ├── test.1.fastq.gz
+        │   └── test.2.fastq.gz
+        └── sample.tab.xls
+```
+
+后台执行命令：
+
+```bash
+nohup docker run  \
+	-v /root/fastq:/fastq \
+	-v /root/outRNA:/home/analyzer/project \
+	-v /root/RefRNA/:/home/analyzer/database_RNA/hg19\
+	-v /root/tangEpiNGSInstall/settings/:/settings/ \
+	--env ref=hg19 --env type=RNA     \
+	registry.aliyuncs.com/hubq/tanginstall &
+```
+
+输入 
+
+```bash
+top
+```
+
+发现程序真的运行起来了。
+
+![Figure 4](/images/2016-07-08-AnalysisNGSonAliYum/Fig5.running.png)
+
+
+根据 ```~/tangEpiNGSInstall/settings/run_mRNA.py```文件73 行到 80 行的设定，在 QC以及比对后的表达定量步骤，会 4 个程序并行，而在比对这一步，同时只有 1 个程序并行。
+
+```python
+    part1 = m01.Map_From_raw(ref, sam_RNAinfo, is_debug=0)
+    part1.s01_QC(core_num=4)
+    part1.s02_Tophat(core_num=1)
+
+    part2 = m02.RNA_Quantification(ref, sam_RNAinfo, core_num=4, is_debug=0)
+    part2.run_pipeline(extra_GTF, given_GTF, is_MergeSam=1)
+
+    part3 = m03.SampStat(ref, sam_RNAinfo, given_GTF, is_debug=0)
+```
+
+这是因为根据 ```~/tangEpiNGSInstall/settings/scripts_mRNA.py``` 这个文件 183-198 行的设定，
+
+```python
+l_sh_info.append("""
+if [ $data_dype == "1" ]
+    then $tophat_py                                                         \\
+           -p 8 -G $gtf_file --library-type fr-unstranded                   \\
+           --transcriptome-index $genome.refGene                            \\
+           -o $tophat_dir/$brief_name  $genome                              \\
+           $cln_dir/$samp_name/1.cln.fq.gz
+fi
+if [ $data_dype == "2" ]
+    then $tophat_py                                                         \\
+           -p 8 -G $gtf_file --library-type fr-unstranded                   \\
+           --transcriptome-index $genome.refGene                            \\
+           -o $tophat_dir/$brief_name  $genome                              \\
+           $cln_dir/$samp_name/1.cln.fq.gz $cln_dir/$samp_name/2.cln.fq.gz
+fi
+        """) 
+```
+
+Tophat 使用了 8 个线程并行。然而服务器只有4个线程，所以我们依次就只并行一个程序了，防止运行速度过慢。并且 Tophat 运行最多可能会占用 7G 左右的内存，这样也是防止内存使用过多。
+
+如果以后阿里云提供更强大的计算资源，并行度的这几个参数就可以增加，加速程序运算。
 
 如果没有问题，则这个程序会一直继续往下跑，直到得出最终结果。
 
-## 3. 汇总结果
-
-重要结果包括:
+顺便测试下 ChIP-Seq 的流程表现如何：
 
 ```bash
-ls /home/analyzer/project/ChIP_test/03.2.Peak_mrg/*/*bw /home/analyzer/project/ChIP_test/03.3.Peak_idr /home/analyzer/project/ChIP_test/StatInfo
+docker run  -v /root/tangEpiNGSInstall/test_fq:/fastq -v /root/outChIP:/home/analyzer/project -v /root/RefChIP/:/home/analyzer/database_ChIP/mm10  -v /root/tangEpiNGSInstall/settings/:/settings/ --env ref=mm10 --env type=ChIP   registry.aliyuncs.com/hubq/tanginstall
 ```
+
+## 3. 汇总结果
+
+测试的 ChIP-Seq 流程很快能结束，重要结果如下：
+
+```
+outChIP/ChIP_test/result/
+├── bigwig
+│   └── mESC_H3K4me3_treat_minus_control.sort.norm.bw
+├── peaks
+│   ├── mESC_H3K4me3_VS_Input_peaks.conservative.regionPeak.gz
+│   └── mESC_H3K4me3_VS_Input_peaks.conservative.regionPeak.gz.tbi
+└── tables
+    ├── 01.Basic_info.sample.tab.xls
+    └── IDR_result.sample.tab.xls
+```
+
+RNA 实战案例的重要结果包括:
+
+```bash
+outRNA/RNA_test/result/
+├── [4.0K]  count  
+│   ├── [224K]  merge.dexseq_clean.gene.xls
+│   ├── [  26]  merge.dexseq_clean_lncRNA.gene.xls
+│   ├── [224K]  merge.dexseq_clean_refseq.gene.xls #后续用 DESeq 分析差异表达
+│   ├── [ 127]  merge.dexseq_clean.stat.xls
+│   ├── [1.3K]  merge.dexseq_ERCC_RGCPloyA.gene.xls
+│   ├── [1.7K]  merge.dexseq_ERCC_RGCPloyA.RPKM.xls
+│   ├── [  26]  merge.dexseq_ERCC_RGCPloyA.stat.xls
+│   └── [   0]  merge.dexseq_NeoPass.gene.xls
+├── [4.0K]  fpkm
+│   └── [426K]  merge.FPKM.gene.xls #FPKM 表达量作图
+├── [4.0K]  repeat
+│   ├── [226M]  merge.Repeat.Count.xls
+│   ├── [237M]  merge.Repeat.RPKM.xls 
+│   ├── [1.1K]  merge.Repeat.SumCount.element.xls #重复序列 表达量作图
+│   ├── [ 428]  merge.Repeat.SumCount.group.xls
+│   └── [ 23K]  merge.Repeat.SumCount.subgroup.xls
+└── [4.0K]  table
+    ├── [ 323]  01.BasicInfo_QC_map_SpikeIn.xls
+    └── [ 182]  02.ERCC_Mols.xls
+```
+
+
 
 以上结果请放入 OSS 中。至此，基本分析流程结束，下一阶段可以进行高级分析。
