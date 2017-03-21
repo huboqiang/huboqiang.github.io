@@ -1,5 +1,5 @@
 ---
-title: "[Docker]使用阿里云分析高通量测序数据—— RNA-Seq 与 ChIP-Seq."
+title: "[Docker]使用阿里云 + Docker 分析高通量测序数据—— RNA-Seq 与 ChIP-Seq."
 tagline: ""
 last_updated: 2017-03-20
 category: tools
@@ -7,7 +7,47 @@ layout: post
 tags : [tools, environments, docker]
 ---
 
-# 使用阿里云分析高通量测序数据—— RNA-Seq 与 ChIP-Seq
+# 使用阿里云+Docker分析高通量测序数据—— RNA-Seq 与 ChIP-Seq
+
+
+写这篇文章的原因，是上一期大数据与生物信息结合的介绍 [使用 IBM datascience 平台统计 hg38每条染色体基因,转录本的分布](http://huboqiang.cn/2017/02/16/AnalyseTheAnnotationOfHumanGenome) 在生信技能树公众号发布以后，很多人问阿里云和 IBM 相比优势在哪里。我当时在文章下面回复说 IBM data science 平台主要是面向后续的数据分析部分，如果跑流程还是推荐阿里云，这个推荐综合了经济因素以及网络速度。
+
+在阿里云租服务器，这里介绍租阿里云的 ECS 服务。ECS 主要分为包月和按小时计费两种方式。包月可以租到更好的机器，但价格动辄一个月上千RMB。按小时租，则最好的机器也就 4核16G 内存，勉强满足生物信息比对的最低要求，但一小时3、4块钱的收费，对于总原始 fastq 数据量在 10GB 以内的小型项目而言，还是十分经济划算的。
+
+项目|信息
+---|---
+地域 : | 华北2
+CPU : | 4 核 16 GB ( 通用n1 )
+GPU : | 无
+网络 : | 10兆网络
+存储 : | 100GB SSD
+镜像 :| Ubunto 16.04
+购买量 :|1台
+配置费用：|¥3.625/时
+
+如果数据量更多，也推荐使用阿里的 [hpc 服务器](https://hpc-buy.aliyun.com)，这个服务器购买的话价格会在10w以上，性能足以在几天时间完成几十个、上百个样本的分析，当然租的话比ECS 的顶配高10倍。
+
+项目|信息
+---|---
+地域 : | 华东1
+CPU : | 64 核 128 GB ( G4 )
+GPU : | Tesla M40 x2
+网络 : |千兆网络
+存储 : |1.92TB SSD x2
+镜像 :| centos7
+购买量 :|1台
+配置费用：|¥37.50/时
+
+本人并非土豪，这篇文章的测试用的是顶配的按小时收费 ECS 服务器。比对一个 200MB 的 SRA 原始文件，总计运行时间在两个半小时左右，其中下载数据约占用40%时间，比对占用50%时间，cufflinks HTSeq 等可以很快完成，总计花费3.625x3=10.875 元。如果用 Hisat 代替 TopHat 比对，速度可以更快，但这个 Docker 基于的脚本是我们实验室15年的分析框架，这个Docker 主要任务还是完整重复之前工作的分析流程，所以没有改动。
+
+这就不得不提到写这篇文章的另一个原因————Docker 的使用目的，这期的 NBT 发表了一篇文章:
+
+![FigureConsole](/images/2016-07-08-AnalysisNGSonAliYum/Fig.DockerNBT.png)
+
+简而言之，Docker 的作用，快速部署服务只是一个方面，这个可以用简单的 shell 脚本完成。而保证整个流程可以重复，就必须保证系统环境的一致性，上到系统库，下到 R 包、Python库，版本必须保持完全一致，才可以保证 **最终结果完全一致、完全可重复**。，
+
+综上所述，Docker + 阿里云实时收费，可以以较低的成本————包括经济成本和时间成本，重复出原先的工作。如果读者有同样的数据，可以在使用同样的 Docker 在阿里云算出自己的数据，然后拿着中间结果去找人求助，比如去[生信技能树](http://www.biotrainee.com/forum-93-1.html) ，打通整个分析流程。
+
 
 ## 1. 在阿里云购买服务器
 
@@ -28,7 +68,10 @@ tags : [tools, environments, docker]
 
 ![Figure 2](/images/2016-07-08-AnalysisNGSonAliYum/Fig2.Buy.png)
 
-注意CPU 内存 选择较大的 4CPU x 16Gb 内存。这是进行生物信息学分析的最低配置，更高配置的机器可以在亚马逊 aws 上租到。同时，操作系统使用  ubuntu 16.04 64位 ，可以直接安装 docker。
+注意CPU 内存 选择较大的 4CPU x 16Gb 内存。这是进行生物信息学分析的最低配置，更高配置的机器可以在亚马逊 aws 上租到。同时，操作系统使用  ubuntu 16.04 64位 ，可以直接安装 docker：
+
+
+
 
 购买成功显示：
 
@@ -60,7 +103,16 @@ apt-get install docker docker.io
 docker pull registry.aliyuncs.com/hubq/tanginstall
 ```
 
+特别说明，这个命令只能在阿里云上使用。不使用阿里云的读者（如AWS），如果装了 Docker 也想试试，这里可以用 DockerHub 的官方镜像:
+
+```bash
+docker pull hubq/tanginstall
+```
+
+阿里云上当然也可以输入这个命令，不过网速就呵呵了，所以这里还是使用阿里云的 Docker镜像，而不是官方的。
+
 好了，稍等一段时间即可安装完成。
+
 ## 2. 分析数据
 
 
@@ -125,7 +177,7 @@ SRR2013442|	M\_PGC\_4W\_embryo3\_sc1|	Group1	|RNA	|0.0|	0.0	|0.0	|0.0|	PE	|M\_PG
 
 Docker 流程的第一步会下载网上的 fasta 文件，并且建立 bwa 软件的 index。建立的 index 放在 docker 内部的 ```/home/analyzer/database_RNA```， 这个文件建立后，可以传入 oss 中，下次分析时可以直接从 oss 取出放入 ```/home/analyzer/database_RNA```， 避免重复运算。
 
-我这里由于已经有了 ref 文件，所以我直接从 OSS 下载，然后直接把这个文件夹挂在 Docker 的 ```/home/analyzer/database_ChIP``` 目录下即可。
+我这里由于已经有了 ref 文件，所以我直接从 OSS 下载，然后直接把这个文件夹挂在 Docker 的 ```/home/analyzer/database_ChIP``` 目录下即可。读者如果想尝试，这里的几步应调过，直接生成 ref 文件。当然时间可能会很久，得几个小时，如果想继续使用，这里需要注意保存输出文件，以便以后使用。
 
 ```bash
 pip install alioss
