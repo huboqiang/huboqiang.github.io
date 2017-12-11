@@ -7,7 +7,7 @@ tagline: Big data programming about bioinformatics
 
 
 ## Self-introduction
-My [Curriculum Vitae(CV)](https://rawgit.com/huboqiang/huboqiang.github.io/master/images/2016-05-31-CV/cv_12/1.svg).
+My [Curriculum Vitae(CV)](http://qcloud-1252801552.file.myqcloud.com/huboqiangCV_01.svg).
 
 ## This blog mainly includes my study notes about
 
