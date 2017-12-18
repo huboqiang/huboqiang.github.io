@@ -1,0 +1,408 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Pages - Boqiang Hu</title>
+    
+    
+    <meta name="author" content="Boqiang Hu">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap styles -->
+    <link href="/assets/themes/bootstrap-3/bootstrap-3/bootstrap-3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional theme -->
+    <link href="/assets/themes/bootstrap-3/bootstrap-3/bootstrap-3.3.1/css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- Custom styles -->
+    <link href="/assets/themes/bootstrap-3/bootstrap-3/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+    <!-- google code prettify -->
+    <link href="/assets/themes/bootstrap-3/bootstrap-3/google-code-prettify/prettify.css" rel="stylesheet" type="text/css" media="all">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!-- Update these with your own images
+      <link rel="shortcut icon" href="images/favicon.ico">
+      <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+  </head>
+
+  <body>
+  <!-- Skip to main content -->
+    <a id="skippy" class="sr-only sr-only-focusable" href="#content"><div class="container"><span class="skiplink-text">Skip to main content</span></div></a>
+
+   <div id="wrap">
+      <nav class="navbar navbar-default bs-docs-bar-top" role="navigation">
+       <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#jb-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Boqiang Hu Studio</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="jb-navbar-collapse">
+          <ul class="nav navbar-nav">
+		<li><a href="/">Home</a></li>
+		<li><a href="/archive.html">Archive</a></li>
+		<li><a href="/categories.html">Categories</a></li>
+		<li><a href="/tags.html">Tags</a></li>
+    <li><a href="/tools.html">Tools</a></li>
+    <li><a href="/humanretina.html">scRNA Human Retina</a></li>
+	  </ul>
+        <!-- site search -->
+          <form class="navbar-form navbar-right" role="search" target="_blank" action="http://www.baidu.com/baidu">
+            <div class="form-group">
+                <input name="word" type="text" class="form-control" placeholder="Search this site...">
+            </div>
+            <!-- <button type="submit" class="btn btn-default">Submit</button> -->
+            <input name=tn type=hidden value="bds">
+            <input name=cl type=hidden value="3">
+            <input name=si type=hidden value="http://huboqiang.github.io">
+            <input name=ct type=hidden value="2097152">
+          </form>
+        </div><!-- /.navbar-collapse -->
+       </div><!-- class="container" -->
+      </nav>
+
+    <!-- doc-container -->
+    <div class="container">
+
+        
+
+<div class="page-header">
+  <h1>Type the name of genes you are interested in: </h1>
+</div>
+<label for="inputGene">Input Genes:</label>
+<input type="text" id="autocomplete">
+<button onclick="PlotGene()">Submit</button>
+<!-- Plotly chart will be drawn inside this DIV -->
+
+<div id="boxPlotStage" class="boxPlotStage"></div>
+    
+    
+    <div id="main" style="background-color:#FFFFFF;height=40%;width:60%;float:left;">
+        <div id="myDiv0"></div>
+    </div>
+
+    <div id="sup" style="background-color:#FFFFFF;height=40%;width:40%;float:left;">
+        <div id="myDiv1"></div>
+        <div id="myDiv2"></div>
+    </div>
+
+
+
+
+   
+    
+    
+    <!-- Plotly.js -->
+
+    
+
+    <script>
+        function PlotGene(){
+        var URL_BASE = "http://198.13.42.241:5000/gene/";
+        var URL_BASE_BOX = "http://198.13.42.241:5000/geneBox/";
+        function update_url() {
+              return URL_BASE + document.getElementById("autocomplete").value;
+        }
+        function updateBox_url() {
+              return URL_BASE_BOX + document.getElementById("autocomplete").value;
+        }
+
+
+        length = 100
+        colorList = d3.scale.linear().domain([1, length])
+            .interpolate(d3.interpolateHcl)
+            .range([d3.rgb("#B1B1B1"), d3.rgb('#2200FF')]);
+
+        Plotly.d3.csv(update_url(), function(err, rows) {
+            var Types = ["Amacrine", "Bipolar", "Blood", "Fibroblast", "Horizontal", "Microglia", "Muller", "Photoreceptor", "RGC", "RPC", "RPE", 'Undef'];
+            var Stages = ['7W', '8W', '9W', '9WP', '10W', '11W', '12WP', '15W', '19W', '25W', '26W', '27W'];
+            M_colorListType = {
+                "Amacrine": "#8dd3c7",
+                "Bipolar": "#ffffb3",
+                "Blood": "#bebada",
+                "Fibroblast": "#fb8072",
+                "Horizontal": "#80b1d3",
+                "Microglia": "#fdb462",
+                "Muller": "#b3de69",
+                "Photoreceptor": "#fccde5",
+                "RGC": "#d9d9d9",
+                "RPC": "#bc80bd",
+                "RPE": "#ccebc5",
+                "Undef": "#333333",
+
+            }
+            M_colorListStage = {
+              "7W" :   "#5E4FA2",
+              "8W" :   "#3682BA",
+              "9W" :   "#5CB7A9",
+              "9WP" :   "#98D5A4",
+              "10W" :   "#D0EC9C",
+              "11W" :   "#F3FAAD",
+              "12WP" :   "#FEF0A7",
+              "15W" :   "#FDCD7B",
+              "19W" :   "#FA9C58",
+              "25W" :   "#EE6445",
+              "26W" :   "#D0384D",
+              "27W" :   "#9E0142"
+            }
+
+            function unpack(rows, key) {
+                return rows.map(function(row) {
+                    return row[key];
+                });
+            }
+
+            function TPMColor(strinput) {
+                var TPMMax = 1000;
+                var v0 = parseFloat(strinput, 2);
+                var v1 = Math.log2(v0 / 100 + 1);
+                var v2 = Math.log2(TPMMax / 100 + 1);
+                idx = parseInt((v1 / v2) * 100);
+                if (idx >= 100) {
+                    idx = 99;
+                }
+                return colorList(idx);
+            }
+            var dataTPM = Types.map(function(type) {
+                var rowsFiltered = rows.filter(function(row) {
+                    return (row.type === type);
+                });
+                return {
+                    mode: 'markers',
+                    x: unpack(rowsFiltered, 'PC1'),
+                    y: unpack(rowsFiltered, 'PC2'),
+                    text: unpack(rowsFiltered, 'sam'),
+                    xaxis: 'x1',
+                    yaxis: 'y1',
+                    marker: {
+                        sizemode: 'area',
+                        size: 5,
+                        color: unpack(rowsFiltered, 'TPM').map(TPMColor),
+                    }
+                };
+            });
+
+            var dataType = Types.map(function(type) {
+                var rowsFiltered = rows.filter(function(row) {
+                    return (row.type === type);
+                });
+                return {
+                    mode: 'markers',
+                    name: type,
+                    x: unpack(rowsFiltered, 'PC1'),
+                    y: unpack(rowsFiltered, 'PC2'),
+                    text: unpack(rowsFiltered, 'sam'),
+                    xaxis: 'x1',
+                    yaxis: 'y1',
+                    marker: {
+                        sizemode: 'area',
+                        size: 5,
+                    }
+                };
+            });
+            var dataStage = Stages.map(function(stage) {
+                var rowsFiltered = rows.filter(function(row) {
+                    return (row.stage === stage);
+                });
+                return {
+                    mode: 'markers',
+                    name: stage,
+                    x: unpack(rowsFiltered, 'PC1'),
+                    y: unpack(rowsFiltered, 'PC2'),
+                    text: unpack(rowsFiltered, 'sam'),
+                    xaxis: 'x2',
+                    yaxis: 'y2',
+                    marker: {
+                        symbol: 'circle',
+                        size: 5,
+                        color: M_colorListStage[unpack(rowsFiltered, 'stage')[0]],
+                    }
+                };
+            });
+            var layout0 = {
+                xaxis1: {
+                    domain: [0, 1],
+                    anchor: "x2",
+                    title: 'PC1'
+                },
+                yaxis1: {
+                    domain: [0, 1],
+                    anchor: "y2",
+                    title: 'PC2',
+                },
+                margin: {
+                    l: 30,
+                    r: 30,
+                    b: 30,
+                    t: 30,
+                    pad: 4
+                },
+                hovermode: 'closest',
+                height: 800
+            };
+            var layout1 = {
+                xaxis1: {
+                    domain: [0, 1],
+                    anchor: "x0",
+                    title: 'PC1'
+                },
+                yaxis1: {
+                    domain: [0, 1],
+                    anchor: "y1",
+                    title: 'PC2',
+                },
+                margin: {
+                    l: 30,
+                    r: 30,
+                    b: 30,
+                    t: 30,
+                    pad: 4
+                },
+                hovermode: 'closest',
+                height: 400
+            };
+            var layout2 = {
+                xaxis1: {
+                    domain: [0, 1],
+                    anchor: "x2",
+                    title: 'PC1'
+                },
+                yaxis1: {
+                    domain: [0, 1],
+                    anchor: "y2",
+                    title: 'PC2',
+                },
+                margin: {
+                    l: 30,
+                    r: 30,
+                    b: 30,
+                    t: 30,
+                    pad: 4
+                },
+                hovermode: 'closest',
+                height: 400
+            };
+            Plotly.newPlot('myDiv0', dataTPM, layout0, {
+                showLink: false
+            });
+            Plotly.newPlot('myDiv1', dataType, layout1, {
+                showLink: false
+            });
+            Plotly.newPlot('myDiv2', dataStage, layout2, {
+                showLink: false
+            });
+        });
+
+
+
+
+
+        /* Boxplot */
+          var urlBox = updateBox_url();
+          d3.select("#boxPlotStage").selectAll("*").remove();
+          var json = (function() {
+              var json = null;
+              $.ajax({
+                  'async': false,
+                  'global': false,
+                  'url': urlBox,
+                  'dataType': "json",
+                  'success': function(data) {
+                      json = data;
+                  }
+              });
+              return json;
+          })();
+          var data = json['results'];
+          var layout = {
+              yaxis: {
+                  title: 'TPM',
+                  zeroline: false
+              },
+              boxmode: 'group'
+          };
+          Plotly.newPlot('boxPlotStage', data, layout);
+                }
+
+    </script>
+
+    </div> <!-- doc-container -->
+
+    </div><!-- div id="wrap" -->
+
+    <div id="footer">
+      <div class="container bs-docs-bar-footer">
+          <p><a href="https://github.com/huboqiang">Fork me on Github</a> &copy; 2017 by Boqiang Hu. </p>
+      </div>
+    </div>
+
+    
+
+
+
+    <!-- Latest compiled and minified JavaScript, requires jQuery 1.x (2.x not supported in IE8) -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/assets/themes/bootstrap-3/bootstrap-3/jquery-1.11.2.min.js"></script>
+    <script src="/assets/themes/bootstrap-3/bootstrap-3/bootstrap-3.3.1/js/bootstrap.min.js"></script>
+    <script src="/assets/themes/bootstrap-3/bootstrap-3/js/application.js"></script>
+    <script src="/assets/themes/bootstrap-3/bootstrap-3/google-code-prettify/prettify.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        /*google-code-prettify*/
+        $('pre').addClass('prettyprint').attr('style', 'overflow:auto');
+        prettyPrint();
+
+        /* Tips */
+        $('pre .language-tips').parent().addClass('tom-callout-tips');
+
+        /* A link icon on the left of headers. */
+        $(".bs-docs-container h1,.bs-docs-container h2, .bs-docs-container h3, .bs-docs-container h4, .bs-docs-container h5, .bs-docs-container h6").each(function(i, el) {
+          var $el, icon, id;
+          $el = $(el);
+          id = $el.attr('id');
+          icon = '<span class="glyphicon glyphicon-link"></span>';
+          if (id) {
+             $el.prepend($("<a class='anchor' />").attr("href", "#" + id).html(icon));
+          }
+        })
+
+
+      });
+    </script>
+    
+    <script> 
+(function(a,b,c,d,e){function f(){var a=b.createElement("script");a.async=!0;
+a.src="//radar.cedexis.com/1/16156/radar.js";b.body.appendChild(a)}/\bMSIE 6/i
+.test(a.navigator.userAgent)||(a[c]?a[c](e,f,!1):a[d]&&a[d]("on"+e,f))})
+(window,document,"addEventListener","attachEvent","load");
+</script> 
+    
+  </body>
+</html>
+
