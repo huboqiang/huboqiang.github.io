@@ -8,44 +8,43 @@ group: navigation
 
 Type the name of genes you are interested in:
 --------------------------------------------
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<link href="http://cdnjs.cloudflare.com/ajax/libs/jquery.tipsy/1.0.2/jquery.tipsy.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+<script type="text/javascript" src="http://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="http://d3js.org/d3.v3.js"></script>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.tipsy/1.0.2/jquery.tipsy.min.js"></script>
+<script type="text/javascript" src="http://qcloud-1252801552.file.myqcloud.com/plotly-latest.min.js"></script>
+<link href="http://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" rel="stylesheet">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+<script type="text/javascript" src="http://qcloud-1252801552.file.myqcloud.com/geneName.js"></script>
+
 
 <label for="inputGene">Input Genes:</label>
 <input type="text" id="autocomplete">
-<button onclick="PlotGene()">Submit</button>
-<!-- Plotly chart will be drawn inside this DIV -->
-
-
-<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/jquery.tipsy/1.0.2/jquery.tipsy.css" rel="stylesheet" type="text/css" />
-        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
-        <script type="text/javascript" src="http://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-        <!--<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script>-->
-        <script type="text/javascript" src="http://d3js.org/d3.v3.js"></script>
-        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.tipsy/1.0.2/jquery.tipsy.min.js"></script>
-        <script type="text/javascript" src="http://qcloud-1252801552.file.myqcloud.com/plotly-latest.min.js"></script>
-        <link href="http://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" rel="stylesheet"></link>
-        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-        <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
-        <script type="text/javascript" src="http://qcloud-1252801552.file.myqcloud.com/geneName.js"></script>
-    <script>
-        $('#autocomplete').autocomplete({
+<script>
+$('#autocomplete').autocomplete({
         source: function (req, responseFn) {
         var term = $.ui.autocomplete.escapeRegex(req.term),
         matcher = new RegExp('^' + term, 'i'),
         matches = $.grep(options, function (item) {
             return matcher.test(item);
         });
-        responseFn(matches.slice(0, 10));
-         }
-    });
+    responseFn(matches.slice(0, 10));
+    }
+});
 </script>
+
+<button onclick="PlotGene()">Submit</button>
+
 
 <div id="boxPlotStage" class="boxPlotStage"></div>
 <div id="main" style="background-color:#FFFFFF;height=40%;width:60%;float:left;">
         <div id="myDiv0"></div>
-    </div>
+</div>
 
 <div id="sup" style="background-color:#FFFFFF;height=40%;width:40%;float:left;">
         <div id="myDiv1"></div>
@@ -62,8 +61,6 @@ Type the name of genes you are interested in:
         function updateBox_url() {
               return URL_BASE_BOX + document.getElementById("autocomplete").value;
         }
-
-
         length = 100
         colorList = d3.scale.linear().domain([1, length])
             .interpolate(d3.interpolateHcl)
@@ -279,48 +276,5 @@ Type the name of genes you are interested in:
           };
           Plotly.newPlot('boxPlotStage', data, layout);
                 }
-
 </script>
-
-</div> <!-- doc-container -->
-
-</div><!-- div id="wrap" -->
-
-<div id="footer">
-      <div class="container bs-docs-bar-footer">
-          <p><a href="https://github.com/huboqiang">Fork me on Github</a> &copy; 2017 by Boqiang Hu. </p>
-      </div>
-    </div>
-
-    
-
-
-
-<!-- Latest compiled and minified JavaScript, requires jQuery 1.x (2.x not supported in IE8) -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="/assets/themes/bootstrap-3/bootstrap-3/jquery-1.11.2.min.js"></script>
-    <script src="/assets/themes/bootstrap-3/bootstrap-3/bootstrap-3.3.1/js/bootstrap.min.js"></script>
-    <script src="/assets/themes/bootstrap-3/bootstrap-3/js/application.js"></script>
-    <script src="/assets/themes/bootstrap-3/bootstrap-3/google-code-prettify/prettify.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function() {
-        /*google-code-prettify*/
-        $('pre').addClass('prettyprint').attr('style', 'overflow:auto');
-        prettyPrint();
-        $('pre .language-tips').parent().addClass('tom-callout-tips');
-        /* A link icon on the left of headers. */
-        $(".bs-docs-container h1,.bs-docs-container h2, .bs-docs-container h3, .bs-docs-container h4, .bs-docs-container h5, .bs-docs-container h6").each(function(i, el) {
-          var $el, icon, id;
-          $el = $(el);
-          id = $el.attr('id');
-          icon = '<span class="glyphicon glyphicon-link"></span>';
-          if (id) {
-             $el.prepend($("<a class='anchor' />").attr("href", "#" + id).html(icon));
-          }
-        })
-      });
-</script>
-    
-<script> 
-
 
